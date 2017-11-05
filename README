@@ -1,3 +1,5 @@
+/*What has been is what will be, and what has been done is what will be done; there is nothing new under the sun.*/
+
 about how to connect local git with remote git:
 1.$ ssh-keygen -t rsa -C "email"
 2.$ start ~/.ssh/id_rsa.pub
