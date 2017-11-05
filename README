@@ -1,3 +1,10 @@
+about how to connect local git with remote git:
+1.$ ssh-keygen -t rsa -C "email"
+2.$ start ~/.ssh/id_rsa.pub
+3.login into github and add a new SSH key // the key-pass word is in id_rsa.pub
+4.$ ssh -T git@github.com // which can test wither connected with remote git
+5.$ git clone git@github.com:[which git I want to connect]
+
 read branches: git branch 
 /* 
 add '-a' can read both local branch and remote branch
