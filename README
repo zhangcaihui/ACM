@@ -1,0 +1,8 @@
+read branches: git branch 
+/* 
+add '-a' can read both local branch and remote branch
+if add [branch name], can build or turn to this branch
+*/
+delete remote branch:	git push origin :[branch name]
+delete local branch: git branch -D [branch name]
+
