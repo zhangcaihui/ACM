@@ -1,0 +1,1485 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\fnil\fcharset0 Verdana;\f1\fnil\fcharset0 HelveticaNeue;\f2\froman\fcharset0 TimesNewRomanPSMT;
+\f3\fnil\fcharset0 AndaleMono;}
+{\colortbl;\red255\green255\blue255;\red45\green68\blue134;\red0\green0\blue0;\red252\green120\blue8;
+\red0\green0\blue192;\red26\green26\blue26;\red18\green23\blue25;\red62\green114\blue187;\red251\green0\blue7;
+\red0\green0\blue117;\red115\green0\blue2;\red83\green85\blue2;\red11\green84\blue83;\red246\green246\blue246;
+\red82\green0\blue83;\red16\green121\blue2;\red0\green0\blue255;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c23137\c34902\c59608;\cssrgb\c0\c0\c0;\cssrgb\c100000\c54902\c0;
+\cssrgb\c0\c0\c80000;\cssrgb\c13333\c13333\c13333;\cssrgb\c8627\c11765\c12941;\cssrgb\c30196\c52941\c78039;\cssrgb\c100000\c0\c0;
+\cssrgb\c0\c0\c53333;\cssrgb\c53333\c0\c0;\cssrgb\c40000\c40000\c0;\cssrgb\c0\c40000\c40000;\cssrgb\c97255\c97255\c97255;
+\cssrgb\c40000\c0\c40000;\cssrgb\c0\c53333\c0;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c100000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh16000\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://codeforces.com/blog/entry/15729"}}{\fldrslt 
+\f0\fs48 \cf2 \expnd0\expndtw0\kerning0
+Algorithm Gym :: Data structures\
+}}\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf0 \expnd0\expndtw0\kerning0
+By\'a0{\field{\*\fldinst{HYPERLINK "http://codeforces.com/profile/PrinceOfPersia"}}{\fldrslt 
+\f1\b \cf4 PrinceOfPersia}}, 2 years ago, {{\NeXTGraphic gb.png \width480 \height480 \noorient
+}¬}, \cf5 {{\NeXTGraphic paperclip-16x16.png \width320 \height320 \noorient
+}¬}
+\fs21 \cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs28 \cf6 Today I want to introduce you some very very useful data structures.\
+In this lecture, we are trying to improve your data structures skills, stay with us and click on 
+\b read more
+\b0 . Important data structures :\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Trees\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Trees are one of the most useful data structures.A tree is a connected-acyclic graph.There are too many types of trees, like : rooted trees, weighted trees, directed trees, tries, etc.\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Partial sum\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 There are two types of problems solvable by partial sum.\
+1.Problems which you are asked to answer some queries about the sum of a part of elements (without modify queries).\
+Solution of all of this problems are the same. You just need to know how to solve one of them.\
+Example : You are asked some queries on an array 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...
+\i a
+\i0 ,\uc0\u8201 
+\i\fs26\fsmilli13125 n
+\f1\i0\fs28 . Each query give you numbers 
+\f2\i\fs35 l
+\f1\i0\fs28  and 
+\f2\i\fs35 r
+\f1\i0\fs28  and you should print 
+\f2\i\fs35 a
+\fs26\fsmilli13125 l
+\i0\fs35 \uc0\u8201 +\u8201 
+\i a
+\fs26\fsmilli13125 l
+\i0 \uc0\u8201 +\u8201 1
+\fs35 \uc0\u8201 +\u8201 ...\u8201 +\u8201 
+\i a
+\fs26\fsmilli13125 r
+\f1\i0\fs28  .\
+Solution : You need to build another array 
+\f2\i\fs35 s
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i s
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i s
+\fs26\fsmilli13125 n
+\f1\i0\fs28  which 
+\f2\i\fs35 s
+\fs26\fsmilli13125 i
+\i0\fs35 \uc0\u8201 =\u8201 
+\i a
+\i0\fs26\fsmilli13125 1
+\fs35 \uc0\u8201 +\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 \uc0\u8201 +\u8201 ...\u8201 +\u8201 
+\i a
+\fs26\fsmilli13125 i
+\f1\i0\fs28  and answer is 
+\f2\i\fs35 s
+\fs26\fsmilli13125 r
+\i0\fs35 \uc0\u8201 -\u8201 
+\i s
+\fs26\fsmilli13125 l
+\i0 \uc0\u8201 -\u8201 1
+\f1\fs28  .\
+2.Problems which you are asked to perform some queries asking you to modify a part of elements (without printing queries.)\
+Solution of all of this problems are the same. You just need to know how to solve one of them.\
+Example : You need to perform some queries on an array 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...
+\i a
+\i0 ,\uc0\u8201 
+\i\fs26\fsmilli13125 n
+\f1\i0\fs28 . Each query give you numbers 
+\f2\i\fs35 l
+\f1\i0\fs28 , 
+\f2\i\fs35 r
+\f1\i0\fs28  and 
+\f2\i\fs35 v
+\f1\i0\fs28  and for each 
+\f2\i\fs35 i
+\f1\i0\fs28  such that 
+\f2\i\fs35 l
+\i0 \uc0\u8201 \u8804 \u8201 
+\i i
+\i0 \uc0\u8201 \u8804 \u8201 
+\i r
+\f1\i0\fs28  you should increase 
+\f2\i\fs35 a
+\fs26\fsmilli13125 i
+\f1\i0\fs28  by 
+\f2\i\fs35 v
+\f1\i0\fs28 , and then after performing all queries, you should print the whole array.\
+Solution : You should have another array 
+\f2\i\fs35 p
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i p
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i p
+\fs26\fsmilli13125 n
+\f1\i0\fs28  which, all of its members are initially 
+\f2\fs35 0
+\f1\fs28 , for each query, you should increase 
+\f2\i\fs35 p
+\fs26\fsmilli13125 l
+\f1\i0\fs28  by 
+\f2\i\fs35 v
+\f1\i0\fs28  and decrease 
+\f2\i\fs35 p
+\fs26\fsmilli13125 r
+\i0 \uc0\u8201 +\u8201 1
+\f1\fs28  by 
+\f2\i\fs35 v
+\f1\i0\fs28  .\
+An then, for each 
+\f2\i\fs35 i
+\f1\i0\fs28 , starting from 
+\f2\fs35 1
+\f1\fs28  you should increase 
+\f2\i\fs35 p
+\fs26\fsmilli13125 i
+\f1\i0\fs28  by 
+\f2\i\fs35 p
+\fs26\fsmilli13125 i
+\i0 \uc0\u8201 -\u8201 1
+\f1\fs28 . So, final array would be 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 \uc0\u8201 +\u8201 
+\i p
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 \uc0\u8201 +\u8201 
+\i p
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 n
+\i0\fs35 \uc0\u8201 +\u8201 
+\i p
+\fs26\fsmilli13125 n
+\f1\i0\fs28  .\
+Hard problem of partial sum : {\field{\*\fldinst{HYPERLINK "http://codeforces.com/gym/100571/problem/B"}}{\fldrslt \cf8 Troynacci Query}}\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Disjoint sets\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Disjoint sets are also useful data structures. Using them is fast and easy. We use theme in many algorithms, like Kruskal's and Prim's.\
+Disjoint sets, or DSU (Disjoint Sets Union) as their name, are sum sets. Imagine we have some boxes and some tools and initially each tool is in one box. Mostly, we are given some queries and ask to merge two boxes or print the members of a box or find which box is some tool in.\
+For rest of these, let's consider that initially there is exactly one tool in a box.That is, we have 
+\f2\i\fs35 n
+\f1\i0\fs28  tools and 
+\f2\i\fs35 n
+\f1\i0\fs28  boxes and initially, tool number 
+\f2\i\fs35 i
+\f1\i0\fs28  is in box number 
+\f2\i\fs35 i
+\f1\i0\fs28 .\
+For this propose, we can use so many containers.Like :\
+\pard\pardeftab720\partightenfactor0
+
+\fs42 \cf7 Trees\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Trees are the most useful containers for DSU. For each vertex, we keep it's parent (and parrent of the root is -1). So, initially are parents are set to -1, and we have queries to find the root of each box(having the root, we can easily find the box's index) and queries for merging two trees. For better time complexity, every time we want to find the root of each vertex, we set it's parent to the root for the next queries.And while merging, we always want to minimize the height of the tree, so when we want to merge the boxes, it's like we put all the tools of the box with fewer tools in the other box.\
+\pard\pardeftab720\partightenfactor0
+\cf6 {{\NeXTGraphic 3165fc32c840d79f41985dbc31d03f27cc297c93.png \width8460 \height3460 \noorient
+}¬}\pard\pardeftab720\partightenfactor0
+\cf6 \
+The best way I've seen to code this kind of DSU, is style of {\field{\*\fldinst{HYPERLINK "http://codeforces.com/profile/bmerry"}}{\fldrslt 
+\b \cf9 bmerry}} : (C++)\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 int\cf11  root\cf12 (\cf10 int\cf11  v\cf12 )\{\cf10 return\cf11  par\cf12 [\cf11 v\cf12 ]\cf11  \cf12 <\cf11  \cf13 0\cf11  \cf12 ?\cf11  v \cf12 :\cf11  \cf12 (\cf11 par\cf12 [\cf11 v\cf12 ]\cf11  \cf12 =\cf11  root\cf12 (\cf11 par\cf12 [\cf11 v\cf12 ]));\}\cf11 \
+\cf10 void\cf11  merge\cf12 (\cf10 int\cf11  x\cf12 ,\cf10 int\cf11  y\cf12 )\{\cf11 	//	x and y are some tools (vertices)\
+        \cf10 if\cf12 ((\cf11 x \cf12 =\cf11  root\cf12 (\cf11 x\cf12 ))\cf11  \cf12 ==\cf11  \cf12 (\cf11 y \cf12 =\cf11  root\cf12 (\cf11 y\cf12 ))\cf11      \cf10 return\cf11  \cf12 ;\cf11 \
+	\cf10 if\cf12 (\cf11 par\cf12 [\cf11 y\cf12 ]\cf11  \cf12 <\cf11  par\cf12 [\cf11 x\cf12 ])\cf11 	// balancing the height of the tree\
+		swap\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 );\cf11 \
+	par\cf12 [\cf11 x\cf12 ]\cf11  \cf12 +=\cf11  par\cf12 [\cf11 y\cf12 ];\cf11 \
+	par\cf12 [\cf11 y\cf12 ]\cf11  \cf12 =\cf11  x\cf12 ;\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 In the code above, for each root 
+\f2\i\fs35 v
+\f1\i0\fs28 , 
+\f2\i\fs35 par
+\i0 [
+\i v
+\i0 ]
+\f1\fs28  equals the negative of number of tools in that box.\
+\pard\pardeftab720\partightenfactor0
+
+\fs42 \cf7 Arrays, vectors\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 We keep tools in a vector (or an array) and when we have a query to merge two boxes, we put all the tools of the box with fewer tools in the other box.\
+The time complexity is good because for each tool, we take and put it in an other box at most 
+\f2\i\fs35 log
+\i0 (
+\i n
+\i0 )
+\f1\fs28  times (each time the size of the vector will be at least doubled).\
+So time complexity would be 
+\f2\i\fs35 O
+\i0 (
+\i n
+\i0 .
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28  .\
+\pard\pardeftab720\partightenfactor0
+
+\fs42 \cf7 Sets (red-black trees)\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Other way is to keep them in a red-black tree (in C++ it's 
+\f3 \cf11 \cb14 set
+\f1 \cf6 \cb1 ). We do exactly like vectors, so time complexity would be 
+\f2\i\fs35 O
+\i0 (
+\i n
+\i0 .
+\i log
+\i0\fs26\fsmilli13125 2
+\fs35 (
+\i n
+\i0 ))
+\f1\fs28  . (One 
+\f2\i\fs35 log
+\f1\i0\fs28  is for inserting).\
+
+\b Problems
+\b0  : {\field{\*\fldinst{HYPERLINK "http://codeforces.com/group/L1Sf9F4uBt/contest/200499/problem/E"}}{\fldrslt \cf8 Hamro and tools}}, {\field{\*\fldinst{HYPERLINK "http://codeforces.com/gym/100571/problem/F"}}{\fldrslt \cf8 TROY Query}} (Join the group {\field{\*\fldinst{HYPERLINK "http://codeforces.com/group/L1Sf9F4uBt"}}{\fldrslt \cf8 ACM-OI}} first)\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Tries\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Tries are some kind of rooted trees in which each edge has a character on it. Actually, trie is some kind of DFA (Determining Finite Automata). For a bunch of strings, their trie is the smallest rooted tree with a character on each edge and each of these strings can be build by writing down the characters in the path from the root to some node.\
+It's advantage is, LCP (Longest Common Prefix) of two of these strings is the 
+\f2\i\fs35 LCA
+\f1\i0\fs28  (Lowest Common Ancestor) of their nodes in the trie(a node that we can build the string by writing down the characters in the path from the root to that node).\
+Generating the trie :\
+Root is vertex number 0 (C++)\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 int\cf11  x\cf12 [\cf11 MAX_NUMBER_OF_NODES\cf12 ][\cf11 MAX_ASCII_CODE\cf12 ],\cf11  \cf10 next\cf11  \cf12 =\cf11  \cf13 1\cf12 ;\cf11  //initially all numbers in x are -1\
+\cf10 void\cf11  build\cf12 (\cf10 string\cf11  s\cf12 )\{\cf11 \
+	\cf10 int\cf11  i \cf12 =\cf11  \cf13 0\cf12 ,\cf11  v \cf12 =\cf11  \cf13 0\cf12 ;\cf11 \
+	\cf10 while\cf12 (\cf11 i \cf12 <\cf11  s\cf12 .\cf11 size\cf12 ())\{\cf11 \
+		\cf10 if\cf12 (\cf11 x\cf12 [\cf11 v\cf12 ][\cf11 s\cf12 [\cf11 i\cf12 ]]\cf11  \cf12 ==\cf11  \cf12 -\cf13 1\cf12 )\cf11 \
+			v \cf12 =\cf11  x\cf12 [\cf11 v\cf12 ][\cf11 s\cf12 [\cf11 i\cf12 ++]]\cf11  \cf12 =\cf11  \cf10 next\cf11  \cf12 ++;\cf11 \
+		\cf10 else\cf11 \
+			v \cf12 =\cf11  x\cf12 [\cf11 v\cf12 ][\cf11 s\cf12 [\cf11 i\cf12 ++]];\cf11 \
+	\cf12 \}\cf11 \
+\cf12 \}\cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs28 \cf6 Problem
+\b0  : {\field{\*\fldinst{HYPERLINK "http://codeforces.com/contest/456/problem/D"}}{\fldrslt \cf8 A lot of games}}\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Suffix array\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Suffix array is a data structure that helps you sort all the suffixes in lexicography order.\
+This array consists of integers, the beginning of suffixes.\
+There are two ways to achieve this goal :\
+One) Non-deterministic algorithm : Use Robin-Carp and for check if a suffix is lexicographically less than another one, find their 
+\f2\i\fs35 LCP
+\f1\i0\fs28  using binary search + hash and then check the next character after their 
+\f2\i\fs35 LCP
+\f1\i0\fs28 .\
+Code :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 namespace\cf11  \cf15 HashSuffixArray\cf11 \
+\cf12 \{\cf11 \
+	\cf10 const\cf11  \cf10 int\cf11 \
+		MAXN \cf12 =\cf11  \cf13 1\cf11  \cf12 <<\cf11  \cf13 21\cf12 ;\cf11 \
+\
+	\cf10 typedef\cf11  \cf10 unsigned\cf11  \cf10 long\cf11  \cf10 long\cf11  hash\cf12 ;\cf11 \
+\
+	\cf10 const\cf11  hash BASE \cf12 =\cf11  \cf13 137\cf12 ;\cf11 \
+\
+	\cf10 int\cf11  N\cf12 ;\cf11 \
+	\cf10 char\cf11  \cf12 *\cf11  S\cf12 ;\cf11 \
+	\cf10 int\cf11  sa\cf12 [\cf11 MAXN\cf12 ];\cf11 \
+	hash h\cf12 [\cf11 MAXN\cf12 ],\cf11  hPow\cf12 [\cf11 MAXN\cf12 ];\cf11 \
+\
+	#define getHash\cf12 (\cf11 lo\cf12 ,\cf11  size\cf12 )\cf11  \cf12 (\cf11 h\cf12 [\cf11 lo\cf12 ]\cf11  \cf12 -\cf11  h\cf12 [(\cf11 lo\cf12 )\cf11  \cf12 +\cf11  \cf12 (\cf11 size\cf12 )]\cf11  \cf12 *\cf11  hPow\cf12 [\cf11 size\cf12 ])\cf11 \
+\
+	\cf10 inline\cf11  \cf10 bool\cf11  sufCmp\cf12 (\cf10 int\cf11  i\cf12 ,\cf11  \cf10 int\cf11  j\cf12 )\cf11 \
+	\cf12 \{\cf11 \
+		\cf10 int\cf11  lo \cf12 =\cf11  \cf13 1\cf12 ,\cf11  hi \cf12 =\cf11  min\cf12 (\cf11 N \cf12 -\cf11  i\cf12 ,\cf11  N \cf12 -\cf11  j\cf12 );\cf11 \
+		\cf10 while\cf11  \cf12 (\cf11 lo \cf12 <=\cf11  hi\cf12 )\cf11 \
+		\cf12 \{\cf11 \
+			\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 lo \cf12 +\cf11  hi\cf12 )\cf11  \cf12 >>\cf11  \cf13 1\cf12 ;\cf11 \
+			\cf10 if\cf11  \cf12 (\cf11 getHash\cf12 (\cf11 i\cf12 ,\cf11  mid\cf12 )\cf11  \cf12 ==\cf11  getHash\cf12 (\cf11 j\cf12 ,\cf11  mid\cf12 ))\cf11 \
+				lo \cf12 =\cf11  mid \cf12 +\cf11  \cf13 1\cf12 ;\cf11 \
+			\cf10 else\cf11 \
+				hi \cf12 =\cf11  mid \cf12 -\cf11  \cf13 1\cf12 ;\cf11 \
+		\cf12 \}\cf11 \
+		\cf10 return\cf11  S\cf12 [\cf11 i \cf12 +\cf11  hi\cf12 ]\cf11  \cf12 <\cf11  S\cf12 [\cf11 j \cf12 +\cf11  hi\cf12 ];\cf11 \
+	\cf12 \}\cf11 \
+\
+	\cf10 void\cf11  buildSA\cf12 ()\cf11 \
+	\cf12 \{\cf11 \
+		N \cf12 =\cf11  strlen\cf12 (\cf11 S\cf12 );\cf11 \
+		hPow\cf12 [\cf13 0\cf12 ]\cf11  \cf12 =\cf11  \cf13 1\cf12 ;\cf11 \
+		\cf10 for\cf11  \cf12 (\cf10 int\cf11  i \cf12 =\cf11  \cf13 1\cf12 ;\cf11  i \cf12 <=\cf11  N\cf12 ;\cf11  \cf12 ++\cf11 i\cf12 )\cf11 \
+			hPow\cf12 [\cf11 i\cf12 ]\cf11  \cf12 =\cf11  hPow\cf12 [\cf11 i \cf12 -\cf11  \cf13 1\cf12 ]\cf11  \cf12 *\cf11  BASE\cf12 ;\cf11 \
+		h\cf12 [\cf11 N\cf12 ]\cf11  \cf12 =\cf11  \cf13 0\cf12 ;\cf11 \
+		\cf10 for\cf11  \cf12 (\cf10 int\cf11  i \cf12 =\cf11  N \cf12 -\cf11  \cf13 1\cf12 ;\cf11  i \cf12 >=\cf11  \cf13 0\cf12 ;\cf11  \cf12 --\cf11 i\cf12 )\cf11 \
+			h\cf12 [\cf11 i\cf12 ]\cf11  \cf12 =\cf11  h\cf12 [\cf11 i \cf12 +\cf11  \cf13 1\cf12 ]\cf11  \cf12 *\cf11  BASE \cf12 +\cf11  S\cf12 [\cf11 i\cf12 ],\cf11  sa\cf12 [\cf11 i\cf12 ]\cf11  \cf12 =\cf11  i\cf12 ;\cf11 \
+\
+		stable_sort\cf12 (\cf11 sa\cf12 ,\cf11  sa \cf12 +\cf11  N\cf12 ,\cf11  sufCmp\cf12 );\cf11 \
+	\cf12 \}\cf11 \
+\
+\cf12 \}\cf11  // end namespace HashSuffixArray
+\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 Two) Deterministic algorithm : We sort them 
+\f2\i\fs35 log
+\i0 (
+\i MaxLength
+\i0 )
+\f1\fs28  steps, in the 
+\f2\i\fs35 i
+\i0 \uc0\u8201 -\u8201 
+\i th
+\f1\i0\fs28  step (counting from 
+\f2\fs35 0
+\f1\fs28 ), we sort them according to their first 
+\f2\fs35 2
+\i\fs26\fsmilli13125 i
+\f1\i0\fs28  characters and put the suffixes whit the same prefix with 
+\f2\fs35 2
+\i\fs26\fsmilli13125 i
+\f1\i0\fs28  characters in the same buckets.\
+Code :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf11 /*\
+Suffix array O(n lg^2 n)\
+LCP table O(n)\
+*/\
+#include \cf16 <cstdio>\cf11 \
+#include \cf16 <algorithm>\cf11 \
+#include \cf16 <cstring>\cf11 \
+\
+\cf10 using\cf11  \cf10 namespace\cf11  std\cf12 ;\cf11 \
+\
+#define REP\cf12 (\cf11 i\cf12 ,\cf11  n\cf12 )\cf11  \cf10 for\cf11  \cf12 (\cf10 int\cf11  i \cf12 =\cf11  \cf13 0\cf12 ;\cf11  i \cf12 <\cf11  \cf12 (\cf10 int\cf12 )(\cf11 n\cf12 );\cf11  \cf12 ++\cf11 i\cf12 )\cf11 \
+\
+\cf10 namespace\cf11  \cf15 SuffixArray\cf11 \
+\cf12 \{\cf11 \
+	\cf10 const\cf11  \cf10 int\cf11  MAXN \cf12 =\cf11  \cf13 1\cf11  \cf12 <<\cf11  \cf13 21\cf12 ;\cf11 \
+	\cf10 char\cf11  \cf12 *\cf11  S\cf12 ;\cf11 \
+	\cf10 int\cf11  N\cf12 ,\cf11  gap\cf12 ;\cf11 \
+	\cf10 int\cf11  sa\cf12 [\cf11 MAXN\cf12 ],\cf11  pos\cf12 [\cf11 MAXN\cf12 ],\cf11  tmp\cf12 [\cf11 MAXN\cf12 ],\cf11  lcp\cf12 [\cf11 MAXN\cf12 ];\cf11 \
+\
+	\cf10 bool\cf11  sufCmp\cf12 (\cf10 int\cf11  i\cf12 ,\cf11  \cf10 int\cf11  j\cf12 )\cf11 \
+	\cf12 \{\cf11 \
+		\cf10 if\cf11  \cf12 (\cf11 pos\cf12 [\cf11 i\cf12 ]\cf11  \cf12 !=\cf11  pos\cf12 [\cf11 j\cf12 ])\cf11 \
+			\cf10 return\cf11  pos\cf12 [\cf11 i\cf12 ]\cf11  \cf12 <\cf11  pos\cf12 [\cf11 j\cf12 ];\cf11 \
+		i \cf12 +=\cf11  gap\cf12 ;\cf11 \
+		j \cf12 +=\cf11  gap\cf12 ;\cf11 \
+		\cf10 return\cf11  \cf12 (\cf11 i \cf12 <\cf11  N \cf12 &&\cf11  j \cf12 <\cf11  N\cf12 )\cf11  \cf12 ?\cf11  pos\cf12 [\cf11 i\cf12 ]\cf11  \cf12 <\cf11  pos\cf12 [\cf11 j\cf12 ]\cf11  \cf12 :\cf11  i \cf12 >\cf11  j\cf12 ;\cf11 \
+	\cf12 \}\cf11 \
+\
+	\cf10 void\cf11  buildSA\cf12 ()\cf11 \
+	\cf12 \{\cf11 \
+		N \cf12 =\cf11  strlen\cf12 (\cf11 S\cf12 );\cf11 \
+		REP\cf12 (\cf11 i\cf12 ,\cf11  N\cf12 )\cf11  sa\cf12 [\cf11 i\cf12 ]\cf11  \cf12 =\cf11  i\cf12 ,\cf11  pos\cf12 [\cf11 i\cf12 ]\cf11  \cf12 =\cf11  S\cf12 [\cf11 i\cf12 ];\cf11 \
+		\cf10 for\cf11  \cf12 (\cf11 gap \cf12 =\cf11  \cf13 1\cf12 ;;\cf11  gap \cf12 *=\cf11  \cf13 2\cf12 )\cf11 \
+		\cf12 \{\cf11 \
+			sort\cf12 (\cf11 sa\cf12 ,\cf11  sa \cf12 +\cf11  N\cf12 ,\cf11  sufCmp\cf12 );\cf11 \
+			REP\cf12 (\cf11 i\cf12 ,\cf11  N \cf12 -\cf11  \cf13 1\cf12 )\cf11  tmp\cf12 [\cf11 i \cf12 +\cf11  \cf13 1\cf12 ]\cf11  \cf12 =\cf11  tmp\cf12 [\cf11 i\cf12 ]\cf11  \cf12 +\cf11  sufCmp\cf12 (\cf11 sa\cf12 [\cf11 i\cf12 ],\cf11  sa\cf12 [\cf11 i \cf12 +\cf11  \cf13 1\cf12 ]);\cf11 \
+			REP\cf12 (\cf11 i\cf12 ,\cf11  N\cf12 )\cf11  pos\cf12 [\cf11 sa\cf12 [\cf11 i\cf12 ]]\cf11  \cf12 =\cf11  tmp\cf12 [\cf11 i\cf12 ];\cf11 \
+			\cf10 if\cf11  \cf12 (\cf11 tmp\cf12 [\cf11 N \cf12 -\cf11  \cf13 1\cf12 ]\cf11  \cf12 ==\cf11  N \cf12 -\cf11  \cf13 1\cf12 )\cf11  \cf10 break\cf12 ;\cf11 \
+		\cf12 \}\cf11 \
+	\cf12 \}\cf11 \
+\
+	\cf10 void\cf11  buildLCP\cf12 ()\cf11 \
+	\cf12 \{\cf11 \
+		\cf10 for\cf11  \cf12 (\cf10 int\cf11  i \cf12 =\cf11  \cf13 0\cf12 ,\cf11  k \cf12 =\cf11  \cf13 0\cf12 ;\cf11  i \cf12 <\cf11  N\cf12 ;\cf11  \cf12 ++\cf11 i\cf12 )\cf11  \cf10 if\cf11  \cf12 (\cf11 pos\cf12 [\cf11 i\cf12 ]\cf11  \cf12 !=\cf11  N \cf12 -\cf11  \cf13 1\cf12 )\cf11 \
+		\cf12 \{\cf11 \
+			\cf10 for\cf11  \cf12 (\cf10 int\cf11  j \cf12 =\cf11  sa\cf12 [\cf11 pos\cf12 [\cf11 i\cf12 ]\cf11  \cf12 +\cf11  \cf13 1\cf12 ];\cf11  S\cf12 [\cf11 i \cf12 +\cf11  k\cf12 ]\cf11  \cf12 ==\cf11  S\cf12 [\cf11 j \cf12 +\cf11  k\cf12 ];)\cf11 \
+			\cf12 ++\cf11 k\cf12 ;\cf11 \
+			lcp\cf12 [\cf11 pos\cf12 [\cf11 i\cf12 ]]\cf11  \cf12 =\cf11  k\cf12 ;\cf11 \
+			\cf10 if\cf11  \cf12 (\cf11 k\cf12 )--\cf11 k\cf12 ;\cf11 \
+		\cf12 \}\cf11 \
+	\cf12 \}\cf11 \
+\cf12 \}\cf11  // end namespace SuffixArray
+\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (Codes by {\field{\*\fldinst{HYPERLINK "http://codeforces.com/profile/mukel"}}{\fldrslt 
+\b \cf17 mukel}})\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Heaps\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 A heap is a binary rooted tree (a rooted tree that each node has at most 2 children) and each vertex has a value.\
+Heap property : Heap usually has a property, like the value of each vertex is equal to or greater than the value of its child(ren) (we call this a max heap). We can use heaps in heap sort.\
+\pard\pardeftab720\partightenfactor0
+\cf6 {{\NeXTGraphic 31fd1ddc79071b2a25e1d69686be6857312f0cb5.png \width6600 \height5360 \noorient
+}¬}\pard\pardeftab720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Fibonacci heaps\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 A fibonacci heap is a kind of heap with better complexities. We don't need to know what a fibonacci heap is.C++ already has one, 
+\f3 \cf11 \cb14 priority_queue
+\f1 \cf6 \cb1 .\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Binary Search Tree (BST)\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 A binary search tree (BST) is a binary rooted tree that every node has a value, and for each node, the value of every node in its left child's subtree is less than its value and the value of every node in its right child's subtree is greater than that. Usually we perform some queries on BSTs, like inserting, deleting, asking and ... .\
+\pard\pardeftab720\partightenfactor0
+\cf6 {{\NeXTGraphic 1e59a444c5f91e9c273813695dad1ae2c611e7be.png \width6000 \height5000 \noorient
+}¬}\pard\pardeftab720\partightenfactor0
+\cf6 \
+Binary search trees are too useful.\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Red-black trees\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 A red-black tree is a kind of BST that after each query, BST will be balanced in such a way that it's height remains 
+\f2\i\fs35 O
+\i0 (
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28 .\
+C++ already has a red-black tree inside, 
+\f3 \cf11 \cb14 set
+\f1 \cf6 \cb1  .\
+You can read about them in C++ references.\
+\pard\pardeftab720\partightenfactor0
+\cf6 {{\NeXTGraphic 3d62ba045affaf36154db2666ab26769ba47ef85.png \width8120 \height5660 \noorient
+}¬}\pard\pardeftab720\partightenfactor0
+\cf6 \
+Unfortunately, 
+\f3 \cf11 \cb14 set
+\f1 \cf6 \cb1  has not any function to find the 
+\f2\i\fs35 k
+\i0 \uc0\u8201 -\u8201 
+\i th
+\f1\i0\fs28  smallest minimum or find the index of an element, bust there is a data structure in C++ with does it in 
+\f2\i\fs35 O
+\i0 (
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28 (also contains all 
+\f3 \cf11 \cb14 set
+\f1 \cf6 \cb1  functions), 
+\f3 \cf11 \cb14 tree
+\f1 \cf6 \cb1  :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf11 #include\cf12 <\cf11 bits\cf12 /\cf11 stdc\cf12 ++.\cf11 h\cf12 >\cf11 \
+#include\cf12 <\cf11 ext\cf12 /\cf11 pb_ds\cf12 /\cf11 assoc_container\cf12 .\cf11 hpp\cf12 >\cf11 \
+#include\cf12 <\cf11 ext\cf12 /\cf11 pb_ds\cf12 /\cf11 tree_policy\cf12 .\cf11 hpp\cf12 >\cf11 \
+\cf10 using\cf11  \cf10 namespace\cf11  __gnu_pbds\cf12 ;\cf11 \
+\cf10 using\cf11  \cf10 namespace\cf11  std\cf12 ;\cf11 \
+\cf10 template\cf11  \cf12 <\cf10 typename\cf11  T\cf12 >\cf11 \
+\cf10 using\cf11  ordered_set \cf12 =\cf11  tree\cf12 <\cf11 T\cf12 ,\cf11  null_type\cf12 ,\cf11  less\cf12 <\cf11 T\cf12 >,\cf11  rb_tree_tag\cf12 ,\cf11  tree_order_statistics_node_update\cf12 >;\cf11 \
+\
+\cf10 int\cf11  main\cf12 ()\{\cf11 \
+	ordered_set\cf16 <int>\cf11   s\cf12 ;\cf11 \
+	s\cf12 .\cf11 insert\cf12 (\cf13 1\cf12 );\cf11  \
+	s\cf12 .\cf11 insert\cf12 (\cf13 3\cf12 );\cf11 \
+	cout \cf12 <<\cf11  s\cf12 .\cf11 order_of_key\cf12 (\cf13 2\cf12 )\cf11  \cf12 <<\cf11  endl\cf12 ;\cf11  // the number of elements in the s less than 2\
+	cout \cf12 <<\cf11  \cf12 *\cf11 s\cf12 .\cf11 find_by_order\cf12 (\cf13 0\cf12 )\cf11  \cf12 <<\cf11  endl\cf12 ;\cf11  // print the 0-th smallest number in s(0-based)\
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (Thanks to {\field{\*\fldinst{HYPERLINK "http://codeforces.com/profile/Swift"}}{\fldrslt 
+\b \cf17 Swift}} for syntax 
+\f3 \cf11 \cb14 using
+\f1 \cf6 \cb1 !)\
+This works even in C++ 98 !\
+You can read more about it, just google 
+\f3 \cf11 \cb14 sgi STL
+\f1 \cf6 \cb1 .\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 SQRT Decomposition\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Suppose we have an array 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 n
+\f1\i0\fs28  and 
+\f2 {{\NeXTGraphic 5757a312f91a101104cf71f76059189ac5a6cee3.png \width1220 \height380 \noorient
+}¬}
+\f1 . We partition this array into 
+\f2\i\fs35 k
+\f1\i0\fs28  pieces each containing 
+\f2\i\fs35 k
+\f1\i0\fs28  elements of 
+\f2\i\fs35 a
+\f1\i0\fs28 .\
+Doing this, we can do a lot of things in 
+\f2 {{\NeXTGraphic 9af4b06f8f17d32c53609242d0543d6137721ed1.png \width1060 \height380 \noorient
+}¬}
+\f1 . Usually we use them in the problems with modify and ask queries.\
+
+\b Problems
+\b0  : {\field{\*\fldinst{HYPERLINK "http://codeforces.com/problemset/problem/13/E"}}{\fldrslt \cf8 Holes}}, {\field{\*\fldinst{HYPERLINK "http://codeforces.com/contest/444/problem/C"}}{\fldrslt \cf8 DZY Loves Colors}}, RMQ (range minimum query) problem\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Sparse Table\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 The main problem that we can solve is RMQ problem, we have an array 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 n
+\f1\i0\fs28  and some queries. Each query gives you numbers 
+\f2\i\fs35 l
+\f1\i0\fs28  and 
+\f2\i\fs35 r
+\f1\i0\fs28  (
+\f2\i\fs35 l
+\i0 \uc0\u8201 \u8804 \u8201 
+\i r
+\f1\i0\fs28 ) and you should print the value of 
+\f2\i\fs35 min
+\i0 (
+\i a
+\fs26\fsmilli13125 l
+\i0\fs35 ,\uc0\u8201 
+\i a
+\fs26\fsmilli13125 l
+\i0 \uc0\u8201 +\u8201 1
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 r
+\i0\fs35 )
+\f1\fs28  .\
+Solving using Sparse Table : For each 
+\f2\i\fs35 i
+\f1\i0\fs28  that 
+\f2\fs35 1\uc0\u8201 \u8804 \u8201 
+\i i
+\i0 \uc0\u8201 \u8804 \u8201 
+\i n
+\f1\i0\fs28  and for each 
+\f2\i\fs35 j
+\f1\i0\fs28  that 
+\f2\fs35 0\uc0\u8201 \u8804 \u8201 
+\i j
+\f1\i0\fs28  and 
+\f2\i\fs35 i
+\i0 \uc0\u8201 +\u8201 2
+\i\fs26\fsmilli13125 j
+\i0\fs35 \uc0\u8201 -\u8201 1\u8201 \u8804 \u8201 
+\i n
+\f1\i0\fs28 , we keep the value of 
+\f2\i\fs35 min
+\i0 (
+\i a
+\fs26\fsmilli13125 i
+\i0\fs35 ,\uc0\u8201 
+\i a
+\fs26\fsmilli13125 i
+\i0 \uc0\u8201 +\u8201 1
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 i
+\i0 \uc0\u8201 +\u8201 2
+\i\fs19\fsmilli9844 j
+\i0\fs26\fsmilli13125 \uc0\u8201 -\u8201 1
+\fs35 )
+\f1\fs28  in 
+\f2\i\fs35 st
+\i0 [
+\i i
+\i0 ][
+\i j
+\i0 ]
+\f1\fs28  (preprocess) : (code is 0-based)\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 for\cf12 (\cf10 int\cf11  j \cf12 =\cf11  \cf13 0\cf12 ;\cf11 j \cf12 <\cf11  MAX_LOG\cf12 ;\cf11 j\cf12 ++)\cf11 \
+	\cf10 for\cf12 (\cf10 int\cf11  i \cf12 =\cf11  \cf13 0\cf12 ;\cf11  i \cf12 <\cf11  n\cf12 ;\cf11 i \cf12 ++)\cf10 if\cf12 (\cf11 i \cf12 +\cf11  \cf12 (\cf13 1\cf11  \cf12 <<\cf11  j\cf12 )\cf11  \cf12 -\cf11  \cf13 1\cf11  \cf12 <\cf11  n\cf12 )\cf11 \
+		st\cf12 [\cf11 i\cf12 ][\cf11 j\cf12 ]\cf11  \cf12 =\cf11  \cf12 (\cf11 j \cf12 ?\cf11  min\cf12 (\cf11 st\cf12 [\cf11 i\cf12 ][\cf11 j\cf12 -\cf13 1\cf12 ],\cf11  st\cf12 [\cf11 i \cf12 +\cf11  \cf12 (\cf13 1\cf11  \cf12 <<\cf11  \cf12 (\cf11 j\cf12 -\cf13 1\cf12 ))\cf11  \cf12 -\cf11  \cf13 1\cf12 ][\cf11 j\cf12 -\cf13 1\cf12 ]):\cf11  a\cf12 [\cf11 i\cf12 ]);
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 And then for each query, first of all, find the maximum 
+\f2\i\fs35 x
+\f1\i0\fs28  such that 
+\f2\fs35 2
+\i\fs26\fsmilli13125 x
+\i0\fs35 \uc0\u8201 \u8804 \u8201 
+\i r
+\i0 \uc0\u8201 -\u8201 
+\i l
+\i0 \uc0\u8201 +\u8201 1
+\f1\fs28  and answer is 
+\f2\i\fs35 min
+\i0 (
+\i st
+\i0 [
+\i l
+\i0 ][
+\i x
+\i0 ],\uc0\u8201 
+\i st
+\i0 [
+\i r
+\i0 \uc0\u8201 -\u8201 2
+\i\fs26\fsmilli13125 x
+\i0\fs35 \uc0\u8201 +\u8201 1][
+\i x
+\i0 ])
+\f1\fs28  .\
+So, the main idea of Sparse Table, is to keep the value for each interval of length 
+\f2\fs35 2
+\i\fs26\fsmilli13125 k
+\f1\i0\fs28  (for each 
+\f2\i\fs35 k
+\f1\i0\fs28 ).\
+You can use the same idea for 
+\f2\i\fs35 LCA
+\f1\i0\fs28  problem and so many other problems.\
+So preprocess will be in 
+\f2\i\fs35 O
+\i0 (
+\i n
+\i0 .
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28  and query will be in 
+\f2\i\fs35 O
+\i0 (1)
+\f1\fs28 \
+
+\b Problems
+\b0  : {\field{\*\fldinst{HYPERLINK "http://codeforces.com/contest/487/problem/B"}}{\fldrslt \cf8 Strip}}, {\field{\*\fldinst{HYPERLINK "http://codeforces.com/contest/475/problem/D"}}{\fldrslt \cf8 GCDSSQ}}, {\field{\*\fldinst{HYPERLINK "http://codeforces.com/gym/100570/problem/A"}}{\fldrslt \cf8 LCM Query}} .\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Heavy light decomposition\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Heavy light decomposition is a way to partition a tree's vertices (or edges) in a good way.\
+In this kind of decomposition, we have some chains, and each vertex belongs to only one chain.\
+If vertex 
+\f2\i\fs35 v
+\f1\i0\fs28  is the parent of 
+\f2\i\fs35 u
+\f1\i0\fs28  size_of_subtree_of(
+\f2\i\fs35 v
+\f1\i0\fs28 )/2 < size_of_subtree_of(
+\f2\i\fs35 u
+\f1\i0\fs28 ), 
+\f2\i\fs35 u
+\f1\i0\fs28  and 
+\f2\i\fs35 v
+\f1\i0\fs28  are in a chain and we call the edge 
+\f2\i\fs35 uv
+\f1\i0\fs28 , heavy, otherwise light.\
+There is at most one such child for each vertex 
+\f2\i\fs35 v
+\f1\i0\fs28 . If we consider the path from any vertex 
+\f2\i\fs35 v
+\f1\i0\fs28  to the root, there will be at most 
+\f2\i\fs35 log
+\i0 (
+\i n
+\i0 )
+\f1\fs28  light edges there (go from 
+\f2\i\fs35 v
+\f1\i0\fs28  to the root, every time we see a light edge, size of subtree will be at least doubled). So, the number of chains on the way = 
+\f2\i\fs35 O
+\i0 (
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28  .\
+In each of these chains, we can contain a container or another data structure like segment tree or etc.\
+\pard\pardeftab720\partightenfactor0
+\cf6 {{\NeXTGraphic 07705ddaf2c7328c34266e919af72e037d3a2e41.png \width10240 \height6380 \noorient
+}¬}\pard\pardeftab720\partightenfactor0
+\cf6 \
+
+\b Problem
+\b0  : {\field{\*\fldinst{HYPERLINK "http://usaco.org/index.php?page=viewproblem2&cpid=102"}}{\fldrslt \cf8 GRASS PLANTING}}\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Fenwick\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Suppose that we have 
+\f2\i\fs35 n
+\f1\i0\fs28  elements numbered from 
+\f2\fs35 1
+\f1\fs28  to 
+\f2\i\fs35 n
+\f1\i0\fs28 .\
+Fenwick or BIT(Binary Indexed Tree) is a data structure with 
+\f2\i\fs35 n
+\f1\i0\fs28  nodes that node number 
+\f2\i\fs35 i
+\f1\i0\fs28  has some information about elements in the interval 
+\f2\fs35 (
+\i i
+\i0 \uc0\u8201 -\u8201  
+\i i
+\i0 &\uc0\u8201 -\u8201 
+\i i
+\i0 ,\uc0\u8201 
+\i i
+\i0 ]
+\f1\fs28  .\
+Actually, you don't need to know what each node contains. The only thing you should know, it this (then you can change and convert it) :\
+We have an array 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 n
+\f1\i0\fs28  and all of them are initially 
+\f2\fs35 0
+\f1\fs28 . We are gives some queries, 1.increase 
+\f2\i\fs35 a
+\fs26\fsmilli13125 p
+\f1\i0\fs28  by 
+\f2\i\fs35 val
+\f1\i0\fs28  and print 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 \uc0\u8201 +\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 \uc0\u8201 +\u8201 ...\u8201 +\u8201 
+\i a
+\fs26\fsmilli13125 p
+\f1\i0\fs28  .\
+Only thing you should know is that how to solve this problem using Fenwick (and then you can change it and solve so many problems).\
+\
+\
+\
+We perform each query in 
+\f2\i\fs35 O
+\i0 (
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28 . Code : (1-based)\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 int\cf11  fen\cf12 [\cf11 MAX_N\cf12 ];\cf11 \
+\cf10 void\cf11  update\cf12 (\cf10 int\cf11  p\cf12 ,\cf10 int\cf11  val\cf12 )\{\cf11 \
+	\cf10 for\cf12 (\cf10 int\cf11  i \cf12 =\cf11  p\cf12 ;\cf11 i \cf12 <=\cf11  n\cf12 ;\cf11 i \cf12 +=\cf11  i \cf12 &\cf11  \cf12 -\cf11 i\cf12 )\cf11 \
+		fen\cf12 [\cf11 i\cf12 ]\cf11  \cf12 +=\cf11  val\cf12 ;\cf11 \
+\cf12 \}\cf11 \
+\cf10 int\cf11  sum\cf12 (\cf10 int\cf11  p\cf12 )\{\cf11 \
+	\cf10 int\cf11  ans \cf12 =\cf11  \cf13 0\cf12 ;\cf11 \
+	\cf10 for\cf12 (\cf10 int\cf11  i \cf12 =\cf11  p\cf12 ;\cf11 i\cf12 ;\cf11 i \cf12 -=\cf11  i \cf12 &\cf11  \cf12 -\cf11 i\cf12 )\cf11 \
+		ans \cf12 +=\cf11  fen\cf12 [\cf11 i\cf12 ];\cf11 \
+	\cf10 return\cf11  ans\cf12 ;\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 Please note that it should be 
+\b 1-based
+\b0 . It can't be done 0-based.\
+
+\b Problems
+\b0  : {\field{\*\fldinst{HYPERLINK "http://acm.sgu.ru/problem.php?contest=0&problem=180"}}{\fldrslt \cf8 Inversions}}, {\field{\*\fldinst{HYPERLINK "http://codeforces.com/contest/459/problem/D"}}{\fldrslt \cf8 Pashmak and Parmida's problem}}, {\field{\*\fldinst{HYPERLINK "http://hsin.hr/coci/archive/2008_2009/contest3_tasks.pdf"}}{\fldrslt \cf8 BST}} .\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Segment tree\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 We have an array of elements and some queries on intervals. So, we will be glad if we can split this interval to 
+\f2\i\fs35 O
+\i0 (
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28  intervals that we have actually some information about them.\
+Segment tree does that for you. Segment tree is a tree that each of it's nodes belongs to an interval.\
+Root of the tree belongs to the interval 
+\f2\fs35 [0,\uc0\u8201 
+\i n
+\i0 )
+\f1\fs28  (0-based).\
+Each node, has 0 or two children. Left and right. If a node's interval is 
+\f2\fs35 [
+\i l
+\i0 ,\uc0\u8201 
+\i r
+\i0 )
+\f1\fs28  and 
+\f2\i\fs35 l
+\i0 \uc0\u8201 +\u8201 1\u8201 \u8800 \u8201 
+\i r
+\f1\i0\fs28 , the interval of its children will be 
+\f2\fs35 [
+\i l
+\i0 ,\uc0\u8201 
+\i mid
+\i0 )
+\f1\fs28  and 
+\f2\fs35 [
+\i mid
+\i0 ,\uc0\u8201 
+\i r
+\i0 )
+\f1\fs28  in order where 
+\f2 {{\NeXTGraphic f012f0aceb04b123e722f7b54391ea2d95722de0.png \width1580 \height460 \noorient
+}¬}
+\f1 , so the height of this tree will be 
+\f2\i\fs35 O
+\i0 (
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28  .\
+\
+Each node has an index, we consider that root has index 1 and the children of a vertex 
+\f2\i\fs35 x
+\f1\i0\fs28  will have indices 
+\f2\fs35 2
+\i x
+\f1\i0\fs28  and 
+\f2\fs35 2
+\i x
+\i0 \uc0\u8201 +\u8201 1
+\f1\fs28  in order.\
+Segment tree is the most useful data structure and every problem solvable by Fenwick is also solvable by Segment tree.\
+If the size of the root's interval is 
+\f2\i\fs35 n
+\f1\i0\fs28 , segment tree could have up to 
+\f2\fs35 4
+\i n
+\f1\i0\fs28  nodes.\
+To split an interval to some nodes of this tree, we will act like this :\
+Suppose that 
+\f2\i\fs35 S
+\f1\i0\fs28  is the set of nodes which their union is 
+\f2\fs35 [
+\i x
+\i0 ,\uc0\u8201 
+\i y
+\i0 )
+\f1\fs28  and no two different nodes in 
+\f2\i\fs35 S
+\f1\i0\fs28  have nonempty intersection.\
+A node 
+\f2\i\fs35 i
+\f1\i0\fs28  with interval 
+\f2\fs35 [
+\i l
+\i0 ,\uc0\u8201 
+\i r
+\i0 )
+\f1\fs28  is in 
+\f2\i\fs35 S
+\f1\i0\fs28  if and only if 
+\f2\i\fs35 x
+\i0 \uc0\u8201 \u8804 \u8201 
+\i l
+\i0 \uc0\u8201 \u8804 \u8201 
+\i r
+\i0 \uc0\u8201 \u8804 \u8201 
+\i y
+\f1\i0\fs28  and if it has a parent with interval 
+\f2\fs35 [
+\i b
+\i0 ,\uc0\u8201 
+\i e
+\i0 )
+\f1\fs28 , 
+\f2\i\fs35 x
+\i0 \uc0\u8201 >\u8201 
+\i l
+\f1\i0\fs28  or 
+\f2\i\fs35 r
+\i0 \uc0\u8201 >\u8201 
+\i y
+\f1\i0\fs28  .\
+C++ code :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf11 vector\cf16 <int>\cf11  s\cf12 ;\cf11 \
+\cf10 void\cf11  split\cf12 (\cf10 int\cf11  x\cf12 ,\cf10 int\cf11  y\cf12 ,\cf11  \cf10 int\cf11  id \cf12 =\cf11  \cf13 1\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf11  \cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 //	id is the index of the node\
+	\cf10 if\cf12 (\cf11 x \cf12 >=\cf11  r \cf10 or\cf11  l \cf12 >=\cf11  y\cf12 )\cf11 	\cf10 return\cf11  \cf12 ;\cf11 	// in this case, intersect of [l,r) and [x,y) is empty\
+	\cf10 if\cf12 (\cf11 x \cf12 <=\cf11  l \cf12 &&\cf11  r \cf12 <=\cf11  y\cf12 )\{\cf11 \
+		s\cf12 .\cf11 push_back\cf12 (\cf11 id\cf12 );\cf11  \
+		\cf10 return\cf11  \cf12 ;\cf11 \
+	\cf12 \}\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	split\cf12 (\cf11 x\cf12 ,\cf11 y\cf12 ,\cf11 id \cf12 *\cf11  \cf13 2\cf12 ,\cf11 l\cf12 ,\cf11 mid\cf12 );\cf11 \
+	split\cf12 (\cf11 x\cf12 ,\cf11 y\cf12 ,\cf11 id \cf12 *\cf11  \cf13 2\cf11  \cf12 +\cf11  \cf13 1\cf12 ,\cf11 mid\cf12 ,\cf11 r\cf12 );\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 Example :\
+We have an array 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 n
+\f1\i0\fs28  and 
+\f2\i\fs35 q
+\f1\i0\fs28  queries. There are 2 types of queries.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f2\i\fs35 \cf6 \kerning1\expnd0\expndtw0 {\listtext	1	}\expnd0\expndtw0\kerning0
+S
+\i0  
+\i l
+\i0  
+\i r
+\f1\i0\fs28 , Print 
+\f2\i\fs35 a
+\fs26\fsmilli13125 l
+\i0\fs35 ,\uc0\u8201 
+\i a
+\fs26\fsmilli13125 l
+\i0 \uc0\u8201 +\u8201 1
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 r
+\f1\i0\fs28 \
+\ls1\ilvl0
+\f2\i\fs35 \kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+M
+\i0  
+\i p
+\i0  
+\i x
+\f1\i0\fs28 , Modify 
+\f2\i\fs35 a
+\fs26\fsmilli13125 p
+\f1\i0\fs28  to 
+\f2\i\fs35 x
+\f1\i0\fs28 , it means 
+\f2\i\fs35 a
+\fs26\fsmilli13125 p
+\i0\fs35 \uc0\u8201 =\u8201 
+\i x
+\f1\i0\fs28  .\
+\pard\pardeftab720\partightenfactor0
+\cf6 First of all we need to build the segment tree, for each node we keep the sum of its interval, for node 
+\f2\i\fs35 i
+\f1\i0\fs28  we call it 
+\f2\i\fs35 s
+\i0 [
+\i i
+\i0 ]
+\f1\fs28 , so we should build the initial segment tree.\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 void\cf11  build\cf12 (\cf10 int\cf11  id \cf12 =\cf11  \cf13 1\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 \
+	\cf10 if\cf12 (\cf11 r \cf12 -\cf11  l \cf12 <\cf11  \cf13 2\cf12 )\{\cf11 	//	l + 1 == r\
+		s\cf12 [\cf11 id\cf12 ]\cf11  \cf12 =\cf11  a\cf12 [\cf11 l\cf12 ];\cf11 \
+		\cf10 return\cf11  \cf12 ;\cf11 \
+	\cf12 \}\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	build\cf12 (\cf11 id \cf12 *\cf11  \cf13 2\cf12 ,\cf11  l\cf12 ,\cf11  mid\cf12 );\cf11 \
+	build\cf12 (\cf11 id \cf12 *\cf11  \cf13 2\cf11  \cf12 +\cf11  \cf13 1\cf12 ,\cf11  mid\cf12 ,\cf11  r\cf12 );\cf11 \
+	s\cf12 [\cf11 id\cf12 ]\cf11  \cf12 =\cf11  s\cf12 [\cf11 id \cf12 *\cf11  \cf13 2\cf12 ]\cf11  \cf12 +\cf11  s\cf12 [\cf11 id \cf12 *\cf11  \cf13 2\cf11  \cf12 +\cf11  \cf13 1\cf12 ];\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 So, before reading the queries, we should call 
+\f2\i\fs35 build
+\i0 ()
+\f1\fs28  .\
+Modify function :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 void\cf11  modify\cf12 (\cf10 int\cf11  p\cf12 ,\cf10 int\cf11  x\cf12 ,\cf10 int\cf11  id \cf12 =\cf11  \cf13 1\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 \
+	s\cf12 [\cf11 id\cf12 ]\cf11  \cf12 +=\cf11  x \cf12 -\cf11  a\cf12 [\cf11 p\cf12 ];\cf11 \
+	\cf10 if\cf12 (\cf11 r \cf12 -\cf11  l \cf12 <\cf11  \cf13 2\cf12 )\{\cf11 	//	l = r - 1 = p\
+		a\cf12 [\cf11 p\cf12 ]\cf11  \cf12 =\cf11  x\cf12 ;\cf11 \
+		\cf10 return\cf11  \cf12 ;\cf11 \
+	\cf12 \}\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l \cf12 +\cf11  r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	\cf10 if\cf12 (\cf11 p \cf12 <\cf11  mid\cf12 )\cf11 \
+		modify\cf12 (\cf11 p\cf12 ,\cf11  x\cf12 ,\cf11  id \cf12 *\cf11  \cf13 2\cf12 ,\cf11  l\cf12 ,\cf11  mid\cf12 );\cf11 \
+	\cf10 else\cf11 \
+		modify\cf12 (\cf11 p\cf12 ,\cf11  x\cf12 ,\cf11  id \cf12 *\cf11  \cf13 2\cf11  \cf12 +\cf11  \cf13 1\cf12 ,\cf11  mid\cf12 ,\cf11  r\cf12 );\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (We should call 
+\f2\i\fs35 modify
+\i0 (
+\i p
+\i0 ,\uc0\u8201  
+\i x
+\i0 )
+\f1\fs28 )\
+Ask for sum function :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 int\cf11  sum\cf12 (\cf10 int\cf11  x\cf12 ,\cf10 int\cf11  y\cf12 ,\cf10 int\cf11  id \cf12 =\cf11  \cf13 1\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 \
+	\cf10 if\cf12 (\cf11 x \cf12 >=\cf11  r \cf10 or\cf11  l \cf12 >=\cf11  y\cf12 )\cf11 	\cf10 return\cf11  \cf13 0\cf12 ;\cf11 \
+	\cf10 if\cf12 (\cf11 x \cf12 <=\cf11  l \cf12 &&\cf11  r \cf12 <=\cf11  y\cf12 )\cf11 	\cf10 return\cf11  s\cf12 [\cf11 id\cf12 ];\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	\cf10 return\cf11  sum\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 ,\cf11  id \cf12 *\cf11  \cf13 2\cf12 ,\cf11  l\cf12 ,\cf11  mid\cf12 )\cf11  \cf12 +\cf11 \
+	       sum\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 ,\cf11  id \cf12 *\cf11  \cf13 2\cf11  \cf12 +\cf11  \cf13 1\cf12 ,\cf11  mid\cf12 ,\cf11  r\cf12 );\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (We should call 
+\f2\i\fs35 sum
+\i0 (
+\i l
+\i0 ,\uc0\u8201  
+\i r
+\i0 )
+\f1\fs28 )\
+\pard\pardeftab720\partightenfactor0
+
+\fs42 \cf7 Lazy propagation\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Imagine we have updates on intervals, what should we do ?\
+Example :\
+We have an array 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 n
+\f1\i0\fs28  and 
+\f2\i\fs35 q
+\f1\i0\fs28  queries. There are 2 types of queries.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f2\i\fs35 \cf6 \kerning1\expnd0\expndtw0 {\listtext	1	}\expnd0\expndtw0\kerning0
+S
+\i0  
+\i l
+\i0  
+\i r
+\f1\i0\fs28 , Print 
+\f2\i\fs35 a
+\fs26\fsmilli13125 l
+\i0\fs35 ,\uc0\u8201 
+\i a
+\fs26\fsmilli13125 l
+\i0 \uc0\u8201 +\u8201 1
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 r
+\f1\i0\fs28 \
+\ls2\ilvl0
+\f2\i\fs35 \kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+I
+\i0  
+\i l
+\i0  
+\i r
+\i0  
+\i x
+\f1\i0\fs28 , for each 
+\f2\i\fs35 i
+\f1\i0\fs28  such that 
+\f2\i\fs35 l
+\i0 \uc0\u8201 \u8804 \u8201 
+\i i
+\i0 \uc0\u8201 <\u8201 
+\i r
+\f1\i0\fs28 , increase 
+\f2\i\fs35 a
+\fs26\fsmilli13125 i
+\f1\i0\fs28  by 
+\f2\i\fs35 x
+\f1\i0\fs28 .\
+\pard\pardeftab720\partightenfactor0
+\cf6 We shouldn't update all the nodes in this interval, just the maximal ones, then pass it to children when we need. This trick is called 
+\b Lazy Propagation
+\b0 , so we should have another array 
+\f2\i\fs35 lazy
+\f1\i0\fs28  (for nodes) which are initially 
+\f2\fs35 0
+\f1\fs28  and every time we want to perform increase query, increase 
+\f2\i\fs35 lazy
+\i0 [
+\i id
+\i0 ]
+\f1\fs28  with 
+\f2\i\fs35 x
+\f1\i0\fs28 .\
+As above, we also should have an array 
+\f2\i\fs35 s
+\f1\i0\fs28  for nodes.\
+So, 
+\f2\i\fs35 build
+\f1\i0\fs28  function will be same as above. But we need some more functions :\
+A function to update a node :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 void\cf11  upd\cf12 (\cf10 int\cf11  id\cf12 ,\cf10 int\cf11  l\cf12 ,\cf10 int\cf11  r\cf12 ,\cf10 int\cf11  x\cf12 )\{\cf11 //	increase all members in this interval by x\
+	lazy\cf12 [\cf11 id\cf12 ]\cf11  \cf12 +=\cf11  x\cf12 ;\cf11 \
+	s\cf12 [\cf11 id\cf12 ]\cf11  \cf12 +=\cf11  \cf12 (\cf11 r \cf12 -\cf11  l\cf12 )\cf11  \cf12 *\cf11  x\cf12 ;\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 A function to pass the update information to its children :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 void\cf11  shift\cf12 (\cf10 int\cf11  id\cf12 ,\cf10 int\cf11  l\cf12 ,\cf10 int\cf11  r\cf12 )\{\cf11 //pass update information to the children\
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	upd\cf12 (\cf11 id \cf12 *\cf11  \cf13 2\cf12 ,\cf11  l\cf12 ,\cf11  mid\cf12 ,\cf11  lazy\cf12 [\cf11 id\cf12 ]);\cf11 \
+	upd\cf12 (\cf11 id \cf12 *\cf11  \cf13 2\cf11  \cf12 +\cf11  \cf13 1\cf12 ,\cf11  mid\cf12 ,\cf11  r\cf12 ,\cf11  lazy\cf12 [\cf11 id\cf12 ]);\cf11 \
+	lazy\cf12 [\cf11 id\cf12 ]\cf11  \cf12 =\cf11  \cf13 0\cf12 ;\cf11 // passing is done\
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 A function to perform increase queries :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 void\cf11  increase\cf12 (\cf10 int\cf11  x\cf12 ,\cf10 int\cf11  y\cf12 ,\cf10 int\cf11  v\cf12 ,\cf10 int\cf11  id \cf12 =\cf11  \cf13 1\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 \
+	\cf10 if\cf12 (\cf11 x \cf12 >=\cf11  r \cf10 or\cf11  l \cf12 >=\cf11  y\cf12 )\cf11 	\cf10 return\cf11  \cf12 ;\cf11 \
+	\cf10 if\cf12 (\cf11 x \cf12 <=\cf11  l \cf12 &&\cf11  r \cf12 <=\cf11  y\cf12 )\{\cf11 \
+		upd\cf12 (\cf11 id\cf12 ,\cf11  l\cf12 ,\cf11  r\cf12 ,\cf11  v\cf12 );\cf11 \
+		\cf10 return\cf11  \cf12 ;\cf11 \
+	\cf12 \}\cf11 \
+	shift\cf12 (\cf11 id\cf12 ,\cf11  l\cf12 ,\cf11  r\cf12 );\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	increase\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 ,\cf11  v\cf12 ,\cf11  id \cf12 *\cf11  \cf13 2\cf12 ,\cf11  l\cf12 ,\cf11  mid\cf12 );\cf11 \
+	increase\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 ,\cf11  v\cf12 ,\cf11  id\cf12 *\cf13 2\cf12 +\cf13 1\cf12 ,\cf11  mid\cf12 ,\cf11  r\cf12 );\cf11 \
+	s\cf12 [\cf11 id\cf12 ]\cf11  \cf12 =\cf11  s\cf12 [\cf11 id \cf12 *\cf11  \cf13 2\cf12 ]\cf11  \cf12 +\cf11  s\cf12 [\cf11 id \cf12 *\cf11  \cf13 2\cf11  \cf12 +\cf11  \cf13 1\cf12 ];\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (We should call 
+\f2\i\fs35 increase
+\i0 (
+\i l
+\i0  
+\i r
+\i0  
+\i x
+\i0 )
+\f1\fs28 )\
+A function to answer to queries asking about the sum :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 int\cf11  sum\cf12 (\cf10 int\cf11  x\cf12 ,\cf10 int\cf11  y\cf12 ,\cf10 int\cf11  id \cf12 =\cf11  \cf13 1\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 \
+	\cf10 if\cf12 (\cf11 x \cf12 >=\cf11  r \cf10 or\cf11  l \cf12 >=\cf11  y\cf12 )\cf11 	\cf10 return\cf11  \cf13 0\cf12 ;\cf11 \
+	\cf10 if\cf12 (\cf11 x \cf12 <=\cf11  l \cf12 &&\cf11  r \cf12 <=\cf11  y\cf12 )\cf11 	\cf10 return\cf11  s\cf12 [\cf11 id\cf12 ];\cf11 \
+	shift\cf12 (\cf11 id\cf12 ,\cf11  l\cf12 ,\cf11  r\cf12 );\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	\cf10 return\cf11  sum\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 ,\cf11  id \cf12 *\cf11  \cf13 2\cf12 ,\cf11  l\cf12 ,\cf11  mid\cf12 )\cf11  \cf12 +\cf11 \
+	       sum\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 ,\cf11  id \cf12 *\cf11  \cf13 2\cf11  \cf12 +\cf11  \cf13 1\cf12 ,\cf11  mid\cf12 ,\cf11  r\cf12 );\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (We should call 
+\f2\i\fs35 sum
+\i0 (
+\i l
+\i0 ,\uc0\u8201  
+\i r
+\i0 )
+\f1\fs28 )\
+
+\b Problems
+\b0  : {\field{\*\fldinst{HYPERLINK "http://www.spoj.com/problems/GSS1/"}}{\fldrslt \cf8 GSS1}}, {\field{\*\fldinst{HYPERLINK "http://www.spoj.com/problems/GSS3/"}}{\fldrslt \cf8 GSS3}}, {\field{\*\fldinst{HYPERLINK "http://www.spoj.com/problems/MULTQ3"}}{\fldrslt \cf8 MULTQ3}}, {\field{\*\fldinst{HYPERLINK "http://www.spoj.com/problems/DQUERY"}}{\fldrslt \cf8 DQUERY}}, {\field{\*\fldinst{HYPERLINK "http://www.spoj.com/problems/KQUERY"}}{\fldrslt \cf8 KQUERY}}, {\field{\*\fldinst{HYPERLINK "http://www.spoj.com/problems/POSTERS"}}{\fldrslt \cf8 POSTERS}}, {\field{\*\fldinst{HYPERLINK "http://www.spoj.com/problems/PATULJCI"}}{\fldrslt \cf8 PATULJCI}}, {\field{\*\fldinst{HYPERLINK "http://codeforces.com/problemset/problem/500/E"}}{\fldrslt \cf18 \cb11 New Year Domino}}, {\field{\*\fldinst{HYPERLINK "http://codeforces.com/problemset/problem/292/E"}}{\fldrslt \cf8 Copying Data}}, {\field{\*\fldinst{HYPERLINK "http://codeforces.com/problemset/problem/446/C"}}{\fldrslt \cf8 DZY Loves Fibonacci Numbers}}, {\field{\*\fldinst{HYPERLINK "http://www.codechef.com/JAN14/problems/FRBSUM"}}{\fldrslt \cf8 FRBSUM}}\
+\pard\pardeftab720\partightenfactor0
+
+\fs56 \cf7 Persistent data structures\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Consider we have some elements, you perform some updates on it and then,and after performing all of them, you want to have the information about the elements, after each update.\
+For this propose, you got a data structure and somehow, you save the version of that data structure.\
+The most useful data structure for this propose is segment tree, I will explain persistent segment tree and all other data structures (like Fenwick) are like that.\
+\pard\pardeftab720\partightenfactor0
+
+\fs42 \cf7 Persistent segment tree\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 Example problem :\
+We have an array 
+\f2\i\fs35 a
+\i0\fs26\fsmilli13125 1
+\fs35 ,\uc0\u8201 
+\i a
+\i0\fs26\fsmilli13125 2
+\fs35 ,\uc0\u8201 ...,\u8201 
+\i a
+\fs26\fsmilli13125 n
+\f1\i0\fs28  and at first 
+\f2\i\fs35 q
+\f1\i0\fs28  update queries and then 
+\f2\i\fs35 u
+\f1\i0\fs28  ask queries which you have to answer online.\
+Each update query gives you numbers 
+\f2\i\fs35 p
+\f1\i0\fs28  and 
+\f2\i\fs35 v
+\f1\i0\fs28  and asks you to increase 
+\f2\i\fs35 a
+\fs26\fsmilli13125 p
+\f1\i0\fs28  by 
+\f2\i\fs35 v
+\f1\i0\fs28  .\
+Each ask query, gives you three numbers 
+\f2\i\fs35 i
+\f1\i0\fs28  and 
+\f2\i\fs35 x
+\f1\i0\fs28  and 
+\f2\i\fs35 y
+\f1\i0\fs28  and asks you to print the value of 
+\f2\i\fs35 a
+\fs26\fsmilli13125 x
+\i0\fs35 \uc0\u8201 +\u8201 
+\i a
+\fs26\fsmilli13125 x
+\i0 \uc0\u8201 +\u8201 1
+\fs35 \uc0\u8201 +\u8201 ...\u8201 +\u8201 
+\i a
+\fs26\fsmilli13125 y
+\f1\i0\fs28  after performing 
+\f2\i\fs35 i
+\i0 \uc0\u8201 -\u8201 
+\i th
+\f1\i0\fs28  query.\
+Each update query, changes the value of 
+\f2\i\fs35 O
+\i0 (
+\i log
+\i0 (
+\i n
+\i0 ))
+\f1\fs28  nodes in the segment tree, so you should keep rest of nodes (not containing 
+\f2\i\fs35 p
+\f1\i0\fs28 ) and create 
+\f2\i\fs35 log
+\i0 (
+\i n
+\i0 )
+\f1\fs28  new nodes. Totally, you need to have 
+\f2\i\fs35 q
+\i0 .
+\i log
+\i0 (
+\i n
+\i0 )
+\f1\fs28  nodes. So, you can not use normal segment's indexing, you should keep the index of children in the arrays 
+\f2\i\fs35 L
+\f1\i0\fs28  and 
+\f2\i\fs35 R
+\f1\i0\fs28 .\
+If you update a node, you should assign a new index to its interval (for 
+\f2\i\fs35 i
+\i0 \uc0\u8201 -\u8201 
+\i th
+\f1\i0\fs28  query).\
+You should keep an array 
+\f2\i\fs35 root
+\i0 [
+\i q
+\i0 ]
+\f1\fs28  which gives you the index of the interval of the root ( 
+\f2\fs35 [0,\uc0\u8201 
+\i n
+\i0 )
+\f1\fs28  ) after performing each query and a number 
+\f2\i\fs35 ir
+\i0 \uc0\u8201 =\u8201 0
+\f1\fs28  which is its index in the initial segment tree (ans of course, an array 
+\f2\i\fs35 s
+\i0 [
+\i MAX
+\fs26\fsmilli13125 NODES
+\i0\fs35 ]
+\f1\fs28  which is the sum of elements in that node). Also you should have a 
+\i NEXT_FREE_INDEX = 1
+\i0  which is always the next free index for a node.\
+First of all, you need to build the initial segment tree :\
+(In these codes, all arrays and queries are 
+\b 0-based
+\b0 )\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 void\cf11  build\cf12 (\cf10 int\cf11  id \cf12 =\cf11  ir\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 \
+	\cf10 if\cf12 (\cf11 r \cf12 -\cf11  l \cf12 <\cf11  \cf13 2\cf12 )\{\cf11 \
+		s\cf12 [\cf11 id\cf12 ]\cf11  \cf12 =\cf11  a\cf12 [\cf11 l\cf12 ];\cf11 \
+		\cf10 return\cf11  \cf12 ;\cf11 \
+	\cf12 \}\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	L\cf12 [\cf11 id\cf12 ]\cf11  \cf12 =\cf11  NEXT_FREE_INDEX \cf12 ++;\cf11 \
+	R\cf12 [\cf11 id\cf12 ]\cf11  \cf12 =\cf11  NEXT_FREE_INDEX \cf12 ++;\cf11 \
+	build\cf12 (\cf11 L\cf12 [\cf11 id\cf12 ],\cf11  l\cf12 ,\cf11  mid\cf12 );\cf11 \
+	build\cf12 (\cf11 R\cf12 [\cf11 id\cf12 ],\cf11  mid\cf12 ,\cf11  r\cf12 );\cf11 \
+	s\cf12 [\cf11 id\cf12 ]\cf11  \cf12 =\cf11  s\cf12 [\cf11 L\cf12 [\cf11 id\cf12 ]]\cf11  \cf12 +\cf11  s\cf12 [\cf11 R\cf12 [\cf11 id\cf12 ]];\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (So, we should call 
+\f2\i\fs35 build
+\i0 ()
+\f1\fs28  )\
+Update function : (its return value, is the index of the interval in the new version of segment tree and 
+\f2\i\fs35 id
+\f1\i0\fs28  is the index of old one)\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 int\cf11  upd\cf12 (\cf10 int\cf11  p\cf12 ,\cf11  \cf10 int\cf11  v\cf12 ,\cf10 int\cf11  id\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 \
+	\cf10 int\cf11  ID \cf12 =\cf11   NEXT_FREE_INDEX \cf12 ++;\cf11  // index of the node in new version of segment tree\
+	\cf10 if\cf12 (\cf11 r \cf12 -\cf11  l \cf12 <\cf11  \cf13 2\cf12 )\{\cf11 \
+		s\cf12 [\cf11 ID\cf12 ]\cf11  \cf12 =\cf11  \cf12 (\cf11 a\cf12 [\cf11 p\cf12 ]\cf11  \cf12 +=\cf11  v\cf12 );\cf11 \
+		\cf10 return\cf11  ID\cf12 ;\cf11 \
+	\cf12 \}\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	L\cf12 [\cf11 ID\cf12 ]\cf11  \cf12 =\cf11  L\cf12 [\cf11 id\cf12 ],\cf11  R\cf12 [\cf11 ID\cf12 ]\cf11  \cf12 =\cf11  R\cf12 [\cf11 id\cf12 ];\cf11  // in case of not updating the interval of left child or right child\
+	\cf10 if\cf12 (\cf11 p \cf12 <\cf11  mid\cf12 )\cf11 \
+		L\cf12 [\cf11 ID\cf12 ]\cf11  \cf12 =\cf11  upd\cf12 (\cf11 p\cf12 ,\cf11  v\cf12 ,\cf11  L\cf12 [\cf11 ID\cf12 ],\cf11  l\cf12 ,\cf11  mid\cf12 );\cf11 \
+	\cf10 else\cf11 \
+		R\cf12 [\cf11 ID\cf12 ]\cf11  \cf12 =\cf11  upd\cf12 (\cf11 p\cf12 ,\cf11  v\cf12 ,\cf11  R\cf12 [\cf11 ID\cf12 ],\cf11  mid\cf12 ,\cf11  r\cf12 );\cf11 \
+	\cf10 return\cf11  ID\cf12 ;\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (For the first query (with index 0) we should run 
+\f2\i\fs35 root
+\i0 [0]\uc0\u8201 =\u8201 
+\i upd
+\i0 (
+\i p
+\i0 ,\uc0\u8201  
+\i v
+\i0 ,\uc0\u8201  
+\i ir
+\i0 )
+\f1\fs28  and for the rest of them, for 
+\f2\i\fs35 j
+\i0 \uc0\u8201 -\u8201 
+\i th
+\f1\i0\fs28  query se should run 
+\f2\i\fs35 root
+\i0 [
+\i j
+\i0 ]\uc0\u8201 =\u8201 
+\i upd
+\i0 (
+\i p
+\i0 ,\uc0\u8201  
+\i v
+\i0 ,\uc0\u8201  
+\i root
+\i0 [
+\i j
+\i0 \uc0\u8201 -\u8201 1])
+\f1\fs28  )\
+Function for ask queries :\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs26\fsmilli13300 \cf10 int\cf11  sum\cf12 (\cf10 int\cf11  x\cf12 ,\cf10 int\cf11  y\cf12 ,\cf10 int\cf11  id\cf12 ,\cf10 int\cf11  l \cf12 =\cf11  \cf13 0\cf12 ,\cf10 int\cf11  r \cf12 =\cf11  n\cf12 )\{\cf11 \
+	\cf10 if\cf12 (\cf11 x \cf12 >=\cf11  r \cf10 or\cf11  l \cf12 >=\cf11  y\cf12 )\cf11 	\cf10 return\cf11  \cf13 0\cf12 ;\cf11 \
+	\cf10 if\cf12 (\cf11 x \cf12 <=\cf11  l \cf12 &&\cf11  r \cf12 <=\cf11  y\cf12 )\cf11 	\cf10 return\cf11  s\cf12 [\cf11 id\cf12 ];\cf11 \
+	\cf10 int\cf11  mid \cf12 =\cf11  \cf12 (\cf11 l\cf12 +\cf11 r\cf12 )/\cf13 2\cf12 ;\cf11 \
+	\cf10 return\cf11  sum\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 ,\cf11  L\cf12 [\cf11 id\cf12 ],\cf11  l\cf12 ,\cf11  mid\cf12 )\cf11  \cf12 +\cf11 \
+	       sum\cf12 (\cf11 x\cf12 ,\cf11  y\cf12 ,\cf11  R\cf12 [\cf11 id\cf12 ],\cf11  mid\cf12 ,\cf11  r\cf12 );\cf11 \
+\cf12 \}
+\fs28 \cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf6 (So, we should print the value of 
+\f2\i\fs35 sum
+\i0 (
+\i x
+\i0 ,\uc0\u8201 
+\i y
+\i0 ,\uc0\u8201 
+\i root
+\i0 [
+\i i
+\i0 ])
+\f1\fs28  )\
+}
