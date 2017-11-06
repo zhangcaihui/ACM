@@ -8,6 +8,7 @@ struct edge{
 int find(int x){ return f[x] == -1 ? x : (f[x] = find(f[x]));}
 
 int Kruskal(){
+   memset(f, -1, sizeof(f));:
     for(int i = 1; i <= m; i ++){
         int xx =find(e[i].x), yy = find(e[i].y);
         if(xx == yy)
