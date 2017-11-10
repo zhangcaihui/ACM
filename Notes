@@ -33,3 +33,10 @@ $ git remote add origin git@github.com:[user's name]/[repository name].git
 $ git remote -v // read the name of remote git
 
 
+
+About how to setting .gitignore file
+.gitignore obey RegExp and it can ignore the files or directory you have set.
+git rm -r --cached [directory's name]
+/* but if you have commit the files you don't want to commit. you need to remove them from the commit history and re-commit the branch again. */
+
+
