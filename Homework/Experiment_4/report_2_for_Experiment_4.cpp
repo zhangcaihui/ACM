@@ -34,13 +34,13 @@ void proc(){
     while(!q.empty() && !ff){
         node uu = q.front(); q.pop();
         int tim = mp[uu];
-        /* debug  */
+        
+        /* debug  
         for(int i = 0; i < 3; i ++){
             printf("%d ", uu.aa[i]);
         }
         printf("--->%d\n", tim - 1);
-        
-        /*      */
+         */
         
         
         for(int i = 0; i < 3; i ++)
