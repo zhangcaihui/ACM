@@ -1,0 +1,8 @@
+As is known to all, Captain Qin is good at math.One day, a cute girl ask Captain Qin a Question:
+We have a function f(x), that the value of f(x) is the sum of dgiat numbers of x.(for example,   f(1234) = 10, because f(1234) = 1+2+3+4 = 10).Now, for a give x(0 < x < 1e7), could you please find a number k(0 < k < 1e2000),that S(k*x) mod 199 = 0. Print the answer k.
+
+INPUT
+The only number x.(0<x<1e7)
+
+OUTPUT
+The answer k.If there are more than one number could satisfy the demand, you could print any one.
