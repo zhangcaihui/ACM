@@ -38,7 +38,7 @@ void proc(){
     for(int i = 1; i <= n; i ++){
         int l;
         scanf("%d", &l);
-        if(!l)
+        if(!l || i == 1)
             continue;
         ql = max(i-l, 1);
         qr = i - 1;
