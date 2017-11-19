@@ -1,5 +1,4 @@
-#include<cstdio>
-using namespace std;
+#include<stdio.h>
 const int maxn = 1001010;
 char ch[maxn];
 int cnt;

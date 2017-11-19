@@ -1,7 +1,6 @@
 #include<cstdio>
 #include<cstring>
 #include<vector>
-using namespace std;
 const int maxn = 10010;
 char ch[maxn];
 int note[maxn];

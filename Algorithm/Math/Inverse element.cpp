@@ -3,7 +3,7 @@
 // Method 1: 	Extended Euclid
 // Requires:	a and b is coprime
 // Modify:  	x, y
-// Effects: 	when the method is finished, x is a's inverse element about b.
+// Effects: 	when the method is finished, x is a's inverse element about b, and y is b's inverse element about a.
 // Return:  	gcd(a, b)
 int ex_gcd(int a, int b, int &x, int &y) {
 	int ret, tmp;
@@ -25,15 +25,15 @@ int ex_gcd(int a, int b, int &x, int &y) {
 // Method 2:	Quick Power
 // Requires:	p is prime
 // Modify:   	none
-// Effects: 	return n's inverse element about p
-// Return:  	n's inverse element about p
+// Effects: 	return x's inverse element about p
+// Return:  	x's inverse element about p
  
-int quick_inverse(int n, int p) {
+int quick_inverse(int x, int p) {
 	int ret = 1;
 	int exponent = p - 2;
-	for (int i = exponent; i; i >>= 1, n = n * n % p) {
+	for (int i = exponent; i; i >>= 1, x = x * x % p) {
 		if (i & 1) {
-			ret = ret * n % p;
+			ret = ret * x % p;
 		}
 	} 
 	return ret;

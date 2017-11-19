@@ -1,6 +1,5 @@
 #include<cstdio>
 #include<algorithm>
-using namespace std;
 const int maxn = 1001010;
 int dp[maxn], n;
 int main(){

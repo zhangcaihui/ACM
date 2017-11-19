@@ -1,6 +1,4 @@
 #include<cstdio>
-#include<cstring>
-using namespace std;
 const int maxn = 1001010;
 char a[maxn], b[maxn];
 int main(){

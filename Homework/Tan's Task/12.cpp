@@ -1,6 +1,6 @@
-#include<cstdio>
+#include<stdio.h>
 #include<algorithm>
-#include<cstdlib>
+#include<stdlib.h>
 #include<time.h>
 using namespace std;
 const int maxn = 1010;

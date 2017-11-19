@@ -1,4 +1,4 @@
-#include<cstdio>
+#include<stdio.h>
 const int maxn = 100;
 int a[] = {0, 12, 2, 8, 22, 16, 4, 10, 6, 14, 20}, b[maxn];
 int main(){
