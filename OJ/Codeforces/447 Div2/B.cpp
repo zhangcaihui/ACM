@@ -14,16 +14,8 @@ long long int n, m, ans;
 int  ff, k, cnt;
 int main(){
     scanf("%lld%lld%d", &n, &m, &k);
-    if(n == 1 || m == 1){
-        if(n*m & 1)
-            ans = 1;
-        else{
-            if(k < 0)
-                ans = 0;
-            else
-                ans = 1;
-        }
-    }
+    if((n+m) & 1 && k == -1)
+        ans = 0;
     else
         ans = qpow(qpow(2, (n-1), mod), (m-1), mod);
     printf("%lld", ans);
