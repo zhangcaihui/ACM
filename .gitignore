@@ -1,6 +1,6 @@
-
 /test/
 *.swp
 *.out
+!./Homework/9thFunny/**/*.out
 test*
 
