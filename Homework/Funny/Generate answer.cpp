@@ -1,9 +1,12 @@
 #include<cstdio>
 #include<cstring>
 const int maxn = 1001010;
-char str[maxn], all[233], ch[maxn];
+char str[maxn], all[2333], ch[maxn];
 int ff, len, T, mp[2333];
 void puin(){
+    memset(mp, 0, sizeof(mp));
+    memset(all, '\0', sizeof(all));
+    memset(str, '\0', sizeof(str));
     scanf("%s", str+1);
     for(int i = 1; str[i]; i ++)
         if(str[i] == '*')
@@ -12,6 +15,7 @@ void puin(){
     len = strlen(str+1);
 }
 void proc(){
+    memset(ch, '\0', sizeof(ch));
     scanf("%s", ch+1);
     int tem = strlen(ch+1), ans = 1;
     if(!ff){
@@ -57,23 +61,27 @@ void openfile(int filecnt){
         file1[p] = file2[p] = forestr[i], p ++;
     file1[p] = file2[p] = filecnt / 10 + '0', p ++;
     file1[p] = file2[p] = filecnt % 10 + '0', p ++;
+    int rr = p;
     for(int i = 0; in[i]; i ++)
         file1[p] = in[i], p ++;
+    p = rr;
     for(int i = 0; out[i]; i ++)
         file2[p] = out[i], p ++;
     freopen(file1, "r", stdin);
-    //freopen(file2, "w", stdout);
+    freopen(file2, "w", stdout);
 }
 
 int main(){
-    const int number = 2;
+    const int number = 12;
     for(int filecnt = 1; filecnt <= number; filecnt++){
         openfile(filecnt);
         puin();
         while(T--)
             proc();
+        /* */
         fclose(stdin);
-        //fclose(stdout);
+        fclose(stdout);
+        
     }
     return 0;
 }
