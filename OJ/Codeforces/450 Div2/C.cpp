@@ -65,7 +65,7 @@ int main(){
         if(cnt < note[i])
             cnt = note[i], ans = i;
     }
-    /* 
+    /*
     for(int i = 1; i <= n; i ++)
         printf("%d ", note[a[i]]);
     puts(" ");
