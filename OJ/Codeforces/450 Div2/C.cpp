@@ -65,11 +65,19 @@ int main(){
         if(cnt < note[i])
             cnt = note[i], ans = i;
     }
+<<<<<<< HEAD
     /* 
+=======
+    /*
+>>>>>>> 90197ef6c4654121ca44c7091191f31e1e751537
     for(int i = 1; i <= n; i ++)
         printf("%d ", note[a[i]]);
     puts(" ");
     */
     printf("%d", ans);
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 90197ef6c4654121ca44c7091191f31e1e751537
