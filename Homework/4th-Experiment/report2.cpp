@@ -35,18 +35,18 @@ void proc(){
         node uu = q.front(); q.pop();
         int tim = mp[uu];
         
-        /* debug  
+        // debug
         for(int i = 0; i < 3; i ++){
             printf("%d ", uu.aa[i]);
         }
         printf("--->%d\n", tim - 1);
-         */
+         
         
         
         for(int i = 0; i < 3; i ++)
             if(uu.aa[i] == x)
                 ff = tim;
-        
+        /*
         for(int i = 0; i < 3; i ++){
             tem = uu;
             tem.aa[i] = a[i];
@@ -56,6 +56,7 @@ void proc(){
             q.push(tem);
         }
         
+        
         for(int i = 0; i < 3; i ++){
             tem = uu;
             tem.aa[i] = 0;
@@ -64,6 +65,7 @@ void proc(){
             mp[tem] = tim + 1;
             q.push(tem);
         }
+         */
         int xx, yy;
         for(int i = 0; i < 3; i ++)
             for(int j = 0; j < 3; j ++){
