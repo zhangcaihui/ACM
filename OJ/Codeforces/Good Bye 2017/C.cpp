@@ -12,19 +12,16 @@ int main(){
         scanf("%lf", &arr[i]);
     ans[1] = r;
     for(int i = 2; i <= n; i ++){
+        ans[i] = r;
         int ff = 0;
         for(int j = 1; j < i; j ++){
             if(fabs(arr[j] - arr[i]) > 2*r)
                 continue;
             double x = fabs(arr[j] - arr[i]);
             ans[i] =max(ans[i], sqrt(4*r*r - x * x) + ans[j]);
-            ff = 1;
         }
-        if(!ff)
-            break;
-        cnt ++;
     }
-    for(int i = 1; i <= cnt; i ++)
+    for(int i = 1; i <= n; i ++)
         printf("%.8lf ", ans[i]);
     return 0;
 }

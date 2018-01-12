@@ -5,7 +5,7 @@
 // Modify:  	x, y
 // Effects: 	when the method is finished, x is a's inverse element about b, and y is b's inverse element about a.
 // Return:  	gcd(a, b)
-int ex_gcd(int a, int b, int &x, int &y) {
+int ex_gcd(int a, int b, int &x, int &y){
 	int ret, tmp;
 	if (b == 0) {
 		x = 1;
