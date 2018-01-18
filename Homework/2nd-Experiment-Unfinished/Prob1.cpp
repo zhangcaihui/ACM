@@ -5,7 +5,7 @@ using namespace std;
 int check(char x){ return (x == '+') || (x == '-') || (x == '*') || (x == '\\');}
 char expe[233333];
 int cal(int fro, int to){
-    
+
 }
 int main(){
     int n;
