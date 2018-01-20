@@ -12,13 +12,10 @@ struct node{
     char name[100];
 }a[100];
 map<string, int> mp;
-int n, m, q, p[100];
-double ans[100][100];
+int n, m, q;
 double dis[100][100];
 char nam1[100], nam2[100];
-int find_(int x){ return p[x] == x ? x : (p[x] = find_(p[x]));}
 void puin(){
-    memset(ans, 127, sizeof(ans));
     memset(dis, 0, sizeof(dis));
     scanf("%d", &n);
     for(int i = 1; i <= n; i ++){
@@ -26,8 +23,6 @@ void puin(){
         mp[a[i].name] = i;
     }
     scanf("%d", &m);
-    for(int i = 1; i <= n; i ++)
-    p[i] = i;
     for(int i = 1; i <= m; i ++){
         scanf("%s%s", nam1, nam2);
         dis[mp[nam1]][mp[nam2]] = -1;
@@ -43,33 +38,18 @@ void proc(){
             else
             dis[i][j] = cal(i, j);
         }
-        ans[i][i] = 0;
     }
     
-    for(int i = 1; i <= n; i ++){
-        queue<int> qq;
-        int rem[100] = {0};
-        rem[i] = 1;
-        qq.push(i);
-        while(!qq.empty()){
-            int u = qq.front(); qq.pop();
-            rem[u] = 0;
-            for(int j = 1; j <= n; j ++){
-                if(ans[i][j] > ans[i][u] + dis[u][j]){
-                    ans[i][j] = ans[i][u] + dis[u][j];
-                    if(rem[j])
-                    continue;
-                    qq.push(j);
-                    rem[j] = 1;
-                }
-            }
-        }
+    for(int u = 1; u <= n; u ++)
+    for(int x = 1; x <= n; x ++)
+    for(int y = 1; y <= n; y ++){
+        dis[x][y] = min(dis[x][y], dis[x][u] + dis[u][y]);
     }
     
     scanf("%d", &q);
     while(q--){
         scanf("%s%s", nam1, nam2);
-        printf("The distance from %s to %s is %.0lf parsecs.\n", nam1, nam2, ans[mp[nam1]][mp[nam2]]);
+        printf("The distance from %s to %s is %.0lf parsecs.\n", nam1, nam2, dis[mp[nam1]][mp[nam2]]);
     }
 }
 
@@ -118,4 +98,5 @@ int main(){
  1
  Mars Jupiter
  */
+
 
