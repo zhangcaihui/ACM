@@ -23,7 +23,18 @@ int main(){
     for(int i = 1; i <= n; i ++)
         scanf("%d", &a[i]);
     sort(a+1, a+1+n);
-    if(dfs(k, 0, n) && ans[k])
+    int ff = 0, rem = a[1] % 3;
+    for(int i = 2; i <= n && rem; i ++){
+        if(a[i] % 3 != rem){
+            ff = 0;
+            break;
+        }
+        ff = 1;
+    }
+    if(ff && k % 3){
+        printf("-1");
+    }
+    else if(dfs(k, 0, n) && ans[k])
         for(int i = k; i ; i --)
             printf("%d", ans[i]);
     else
