@@ -1,3 +1,11 @@
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<vector>
+#include<queue>
+using namespace std;
+const int mod = 1e9+7;
+int roo;
 long long a[100005], len;
 long long q_pow(long long a, long long b, long long c)
 {
@@ -45,5 +53,57 @@ long long primitive_root(long long p)
         if(g_test(g,p))
             return g;
         g++;
+    }
+}
+const int MAXN = 101010;
+long long int addv[MAXN*4], mulv[MAXN*4];
+int n, q;
+
+void build1(int o, int l, int r, int p, int v){
+    if(l == r){
+        while(v/roo){
+            mulv[o] ++;
+            v /= roo;
+        }
+        addv[o] = v;
+        return ;
+    }
+    int m = (l + r) >> 1;
+    if(p <= m)
+        build1(o<<1, l, m, p, v);
+    else
+        build1(o<<1+1, m+1, r, p, v);
+}
+
+void add_update(int o, int l, int r){
+    
+}
+
+void mul_update(int o, int l, int r){
+    
+}
+
+void puin(){
+    memset(addv, 0, sizeof(addv));
+    memset(mulv, 0, sizeof(mulv));
+    scanf("%d%d", &n, &q);
+    for(int i = 1; i <= n; i ++){
+        int tem;
+        scanf("%d", &tem);
+        build1(1, 1, n, i, tem);
+    }
+}
+
+void proc(){
+    
+}
+
+int main(){
+    int roo = primitive_root(mod);
+    int T;
+    scanf("%d", &T);
+    while(T--){
+        puin();
+        proc();
     }
 }
