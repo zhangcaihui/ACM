@@ -14,9 +14,10 @@ struct Edge {
 
 struct EdmondsKarp {
     int n, m;
-    vector<Edge> edges;
-    vector<int> G[MAXN];
-    int a[MAXN], p[MAXN];
+    vector<Edge> edges;     //边数 * 2
+    vector<int> G[MAXN];    //邻接表,G[i][j]表示节点i的第j条边在e数组中的序号
+    int a[MAXN];            //当起点到i的可改进两
+    int p[MAXN];            //最短路树上p的入弧编号
 
     void init(int n) {
         for(int i = 0; i < n; i ++)
