@@ -70,7 +70,7 @@ int main(){
         mp[rem[i]] = i;
     
     for(int i = 1; i <= q; i ++){
-        ql = mp[que[i].l], qr = mp[que[i].r] + 1;
+        ql = mp[que[i].l], qr = mp[que[i].r];
         if(que[i].t & 1)
             update(1, 1, len);
         else
