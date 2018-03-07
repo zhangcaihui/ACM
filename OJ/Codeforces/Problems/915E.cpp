@@ -89,7 +89,6 @@ void deal(int o, int l, int r){
     else
         maintain(rc, m+1, r);
     maintain(o, l, r);
-    //return tree[o].len;
 }
 
 void proc(){
@@ -97,7 +96,6 @@ void proc(){
         ql = que[i].l - 1;
         qr = que[i].r;
         stu = que[i].stu - 1;
-        //printf("test: %d %d %d\n", ql, qr, stu);
         deal(1, 1, len);
         printf("%d\n", tree[1].len);
     }
