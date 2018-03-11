@@ -1,4 +1,5 @@
 // need to be test;
+// 最小割 等同于 最大流
 #include<queue>
 #include<vector>
 #include<cstdio>
