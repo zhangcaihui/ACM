@@ -2,7 +2,7 @@
 #include<cstring>
 #include<algorithm>
 using namespace std;
-const int MAXN = 1001010;
+const int MAXN = 501010;
 const int lg = 21;
 typedef long long int LL;
 int cnt, T;
@@ -19,21 +19,24 @@ struct node{
 void proc1(){
     p = p ^ last;
     q = q ^ last;
-    printf("debug #1: %lld %lld\n", p, q);
     arr[++cnt].val = q;
     if(arr[p].val >= q)
         arr[cnt].pre[0] = p, arr[cnt].sum[0] = arr[p].val;
     else{
-        for(int i = 0; i < lg; i ++){
-            if(arr[arr[p].pre[i]].val >= q){
+        for(int i = lg - 1; i >= 0; i --){
+            if(arr[p].pre[i] == -1)
+                continue;
+            if(arr[arr[p].pre[i]].val < q)
                 p = arr[p].pre[i];
-                break;
             }
-        }
-        arr[cnt].pre[0] = p;
-        arr[cnt].pre[0] = arr[p].val;
+        arr[cnt].pre[0] = arr[p].pre[0];
+        arr[cnt].sum[0] = arr[arr[p].pre[0]].val;
     }
+    if(arr[cnt].pre[0] == -1)
+        return ;
     for(int i = 1; i < lg; i ++){
+        if(arr[arr[cnt].pre[i-1]].pre[i-1] == -1)
+            break;
         arr[cnt].pre[i] = arr[arr[cnt].pre[i-1]].pre[i-1];
         arr[cnt].sum[i] = arr[arr[cnt].pre[i-1]].sum[i-1] + arr[cnt].sum[i-1];
     }
@@ -41,23 +44,32 @@ void proc1(){
 
 void proc2(){
     p = p ^ last;
-    LL x = q ^ last;
-    printf("debug #2: %lld %lld\n", p, x);
+    q = q ^ last;
     LL sumv = arr[p].val;
-    int len = 0;
-    if(sumv > x){
+    if(sumv > q){
         last = 0;
-        printf("0");
+        printf("0\n");
         return;
     }
-    len = 1;
-    
-
+    int len = 1;
+    for(int i = lg - 1; i >= 0; i --){
+        if(arr[p].pre[i] == -1)
+            continue;
+        if(sumv + arr[p].sum[i] <= q){
+            sumv += arr[p].sum[i];
+            len += (1 << i);
+            p = arr[p].pre[i];
+        }
+    }
+    last = len;
+    printf("%d\n", len);
 }
 
 int main(){
     scanf("%d", &T);
-    arr[++cnt].pre[0] = 0, arr[cnt].val = 0;
+    for(int i = 0; i < MAXN; i ++)
+        arr[i].init();
+    arr[++cnt].pre[0] = -1, arr[cnt].val = 0;
     while(T--){
         int t;
         scanf("%d%lld%lld", &t, &p, &q);
