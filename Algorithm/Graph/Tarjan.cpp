@@ -15,11 +15,11 @@ void Tarjan(int x){
     if(dfn[x] == low[x]){
         inst[x] = 0;
         color[x] = ++ cnum;
-        v[cnum].push_back(x);
+        v2[cnum].push_back(x);
         while(st.top() != x){
             color[st.top()] = cnum;
             inst[st.top()] = 0;
-            v[cnum].push_back(st.top());
+            v2[cnum].push_back(st.top());
             st.pop();
         }
         st.pop();
