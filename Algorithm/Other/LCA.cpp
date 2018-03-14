@@ -1,4 +1,5 @@
 // Note that fa[i][0] != i.
+// fa[i][j] = fa[fa[i][j-1]][j-1];
 int LCA(int u,int v)  
 {  
     if(dep[u]<dep[v])swap(u,v);  //我们默认u的深度一开始大于v，那么如果u的深度小就交换u和v  

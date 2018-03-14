@@ -42,7 +42,7 @@ int main(){
         ans[++p] = i;
     }
     for(int i = 1; i <= x; i ++){
-        r1 = r2 - a + 1;
+        r1 = r2 - a + 1;`1  
         for(int j = r1; j <= r2; j ++){
             ans[++p] = j;
         }

@@ -28,7 +28,7 @@ void proc1(){
                 continue;
             if(arr[arr[p].pre[i]].val < q)
                 p = arr[p].pre[i];
-            }
+        }
         arr[cnt].pre[0] = arr[p].pre[0];
         arr[cnt].sum[0] = arr[arr[p].pre[0]].val;
     }
