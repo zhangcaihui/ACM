@@ -25,7 +25,7 @@ Matrix cal(Matrix x, Matrix y){
                 ans.arr[i][j] += x.arr[i][q] * y.arr[q][j];
                 ans.arr[i][j] %= k;
             }
-    return ans;    
+    return ans;
 }
 
 Matrix qpow(Matrix x, int p){
