@@ -21,17 +21,16 @@ char ch[1010][1010];
 LL tem1[1010][1010];
 LL rem1[1010][1010];
 LL pow2[1010], pow3[1010];
+LL rpow2[1010], rpow3[1010];
 int cnt[1010][1010];
 
 LL cal(int x1, int y1, int x2, int y2){
     LL ans = rem1[x2+1][y2+1];
-    //printf("x2+1 :%d  y2+1: %d \t %lld\n", x2+1, y2+1, ans);
     ans = (ans + mod1 - rem1[x1][y2+1]) % mod1;
     ans = (ans + mod1 - rem1[x2+1][y1]) % mod1;
     ans = (ans + rem1[x1][y1]) % mod1;
-    //printf("sum = %d\n", ans);
-    ans = ans * qpow(pow2[y1], mod1-2, mod1) % mod1;
-    ans = ans * qpow(pow3[x1], mod1-2, mod1) % mod1;
+    ans = ans * rpow2[y1] % mod1;// ans * qpow(pow2[y1], mod1-2, mod1) % mod1;
+    ans = ans * rpow3[x1] % mod1;//ans * qpow(pow3[x1], mod1-2, mod1) % mod1;
     return ans;
 }
 
@@ -78,6 +77,14 @@ int main(){
             tmp = tmp * r2 % mod1;
         }
         rec = rec * r3 % mod1;
+    }
+    
+    LL rec2 = qpow(pow2[1001], mod1-2, mod1);
+    LL rec3 = qpow(pow3[1000], mod1-2, mod1);
+    rpow2[1001] = rec2, rpow3[1001] = rec3;
+    for(int i = 1000; i >= 0; i --){
+        rpow2[i] = r2 * rpow2[i+1] % mod1;
+        rpow3[i] = r3 * rpow3[i+1] % mod1;
     }
     
     for(int i = 1; i <= n; i ++){
