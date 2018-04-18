@@ -1,103 +1,82 @@
-#include<bits/stdc++.h>
+#include<cstdio>
+#include<cstring>
+#include<algorithm>
+#include<vector>
+#include <cstring>
 using namespace std;
-const int MAXN = 101010*30;
-int rem[MAXN], o, lef = 2;
-int n, arr[MAXN];
+const int maxn = 1001010*3;
+const int MAXN = 101010;
 vector<int> v[MAXN];
 int prime[maxn],primesize,phi[maxn];
 bool isprime[maxn];
-int main(){
-     memset(isprime,1,sizeof(isprime));
-     isprime[1]=false;
-     for(int i=2;i<= maxn;i++)
-     {
+void pre(){
+    memset(isprime,1,sizeof(isprime));
+    isprime[1]=false;
+    for(int i=2;i<= maxn;i++)
+    {
         if(isprime[i])prime[++primesize]=i;
         for(int j=1;j <= primesize && i * prime[j] <= maxn;j++)
         {
-             isprime[i*prime[j]]=false;
+            isprime[i*prime[j]]=false;
             if(i%prime[j]==0)break;
-         }
-     }
-}
-
-int main(){
-
-    for(int i = 2; i < MAXN; i ++){
-        v[i].push_back(i);
-        for(int j = 2; j*j <= i; j ++){
-            if(i % j == 0){
-                v[i].push_back(j);
-                if(j*j != i){
-                    v[i].push_back(i/j);
-                }
-            }
         }
-    }
-    scanf("%d", &n);
-    for(int i = 1; i <= n; i ++){
-        scanf("%d", &arr[i]);
     }
     
+    for(int i = 2; i < MAXN; i ++){
+        for(int j = 1; prime[j] <= i; j ++){
+            if(i % prime[j])
+                continue;
+            v[i].push_back(prime[j]);
+        }
+    }
+}
+int n, flag, lef = 1;
+bool rem[maxn];
+int main(){
+    pre();
+    scanf("%d", &n);
     for(int i = 1; i <= n; i ++){
-        int flag = 0, p;
-        if(o){
-            for(int j = lef; j < MAXN; j ++){
-                int siz = v[j].size();
-                int turn = 0;
-                for(int k = 0; k < siz; k ++){
-                    if(rem[v[j][k]]){
-                        turn = 1;
-                        break;
-                    }
-                }
-                if(!turn){
-                    printf("%d ", j);
-                    for(int k = 0; k < siz; k ++){
-                        rem[v[j][k]] = 1;
-                    }
-                    lef = j;
-                    break;
-                }
-            }
+        int tem;
+        scanf("%d", &tem);
+        if(flag){//flag means have changed.
+            while(rem[prime[lef]])
+                lef ++;
+            printf("%d ", prime[lef]);
+            rem[prime[lef]] = 1;
         }
         else{
-            int siz = v[arr[i]].size();
-            int turn = 0;
+            int siz = v[tem].size();
+            bool tmp = false;
             for(int j = 0; j < siz; j ++){
-                if(rem[v[arr[i]][j]]){
-                    turn = 1;
-                    o = 1;
+                if(rem[v[tem][j]]){
+                    tmp = true;
                     break;
                 }
             }
-            if(turn){
-                for(int j = arr[i] + 1; ; j ++){
-                    
-                    int tem = 0;
-                    int siz = v[j].size();
+            if(!tmp){
+                for(int j = 0; j < siz; j ++)
+                    rem[v[tem][j]] = true;
+                printf("%d ", tem);
+            }
+            else{
+                flag = true;
+                for(int j = tem + 1; ; j ++){
+                    tmp = false;
+                    siz = v[j].size();
                     for(int k = 0; k < siz; k ++){
                         if(rem[v[j][k]]){
-                            tem = 1;
+                            tmp = true;
                             break;
                         }
                     }
-                    if(!tem){
-                        for(int k = 0; k < siz; k ++){
-                            rem[v[j][k]] = 1;
-                        }
+                    if(!tmp){
                         printf("%d ", j);
+                        for(int k = 0; k < siz; k ++)
+                            rem[v[j][k]] = true;
                         break;
                     }
                 }
             }
-            else{
-                printf("%d ", arr[i]);
-                int siz = v[arr[i]].size();
-                for(int k = 0; k < siz; k ++){
-                    rem[v[arr[i]][k]] = 1;
-                }
-            }
         }
     }
-    return 0;
 }
