@@ -29,12 +29,14 @@ int main(){
     for(int i = 1; i <= n; i ++){
         scanf("%d", &tmp);
         v[tmp].push_back(i);
-        if(tmp){
-            v[i].push_back(tmp);
-            cnt[i] ++;
-        }
+        if(tmp)
+            v[i].push_back(tmp), cnt[i] ++;
         cnt[tmp] ++;
         a[i].num = i;
+    }
+    if(!(n & 1)){
+        printf("NO");
+        return 0;
     }
     dfs(1, 1);
     for(int i = 1; i <= n; i ++){
@@ -58,13 +60,8 @@ int main(){
             q.push(a[v[tem.num][i]]);
         }
     }
-    
-    if(n & 1){
-        printf("YES\n");
-        while(!prin.empty()){
-            printf("%d\n", prin.front()); prin.pop();
-        }
+    printf("YES\n");
+    while(!prin.empty()){
+        printf("%d\n", prin.front()); prin.pop();
     }
-    else
-        printf("NO");
 }
