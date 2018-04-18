@@ -33,13 +33,10 @@ int main(){
     
     LL xx = qpow(tem, k);
     LL sum = 0, ans = 0;
-    if(xx == 1){
+    if(xx == 1)
         sum = (n+1) / k;
-    }
-    else{
-        if((1+n) / k)
+    else if((1+n) / k)
             sum = 1 * (qpow(xx, (1+n)/k) - 1) % mod * qpow(xx-1, mod-2) % mod;
-    }
     ans = sum * rem % mod;
     int y = (int)((1+n) % k);
     tem = qpow(a, n);
